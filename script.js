@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: "denji",
             nombre: "Denji",
-            temporada: ["División 4", "Híbridos", "Parte 1", "Parte 2"], 
+            temporada: ["División 4", "Híbridos", "Parte 1", "Parte 2", "Seguridad Pública"], 
             desc: "El protagonista que se fusionó con Pochita. Trabaja para la Seguridad Pública para saldar la deuda de su padre.",
             img: "https://i.pinimg.com/736x/75/e2/9c/75e29c46e9d4dcc6b1081b3f8f24a777.jpg",
             fotoGrande: "https://placehold.co/400x600/e67e22/white?text=Denji+Full",
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: "power",
             nombre: "Power",
-            temporada: ["División 4", "Poseídos", "Parte 1"], 
+            temporada: ["División 4", "Poseídos", "Parte 1", "Seguridad Pública"], 
             desc: "Un demonio sanguinario que trabaja con Denji.",
             img: "https://placehold.co/100x100/ff6b6b/white?text=Power",
             fotoGrande: "https://placehold.co/400x600/ff6b6b/white?text=Power+Full",
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     // ==========================================
-    // 2. MENÚ LATERAL (LÓGICA ESTRICTA/FIJA)
+    // 2. MENÚ LATERAL (LISTA FIJA)
     // ==========================================
     const listaMenu = document.getElementById('lista-menu');
     const inputBusqueda = document.getElementById('input-busqueda');
@@ -119,34 +119,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const clean = (t) => t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
         if (filtro === "") {
-            // --- LISTA BLANCA DE CATEGORÍAS ---
-            // Solo estas categorías aparecerán en el menú. Cualquier otra etiqueta en la BD será ignorada aquí.
             const categoriasFijas = [
-                "Parte 1",
-                "Parte 2",
-                "Seguridad Pública",
-                "Híbridos",
-                "Poseídos",
-                "Demonios"
+                "Parte 1", "Parte 2", "Seguridad Pública", "Híbridos", "Poseídos", "Demonios"
             ];
 
             categoriasFijas.forEach(temp => {
-                // Filtramos personajes que tengan ESTA categoría en su lista
                 const personajesEnCategoria = datos.filter(d => {
                     const arr = Array.isArray(d.temporada) ? d.temporada : [d.temporada];
                     return arr.includes(temp);
                 });
 
-                // Crear título del acordeón
                 const titulo = document.createElement('div');
                 titulo.className = 'categoria';
                 titulo.innerHTML = `<span>${temp}</span> <span>▼</span>`;
                 
-                // Crear cuerpo del acordeón
                 const cuerpo = document.createElement('div');
                 cuerpo.className = 'sub-menu';
                 
-                // Rellenar con personajes
                 if (personajesEnCategoria.length > 0) {
                     personajesEnCategoria.forEach(p => {
                         cuerpo.appendChild(crearItemMenu(p));
@@ -155,22 +144,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     const vacio = document.createElement('div');
                     vacio.style.padding = "10px";
                     vacio.style.fontSize = "0.8rem";
-                    vacio.style.color = "#888";
+                    vacio.style.color = "#ddd";
+                    vacio.style.fontStyle = "italic";
                     vacio.innerText = "Sin registros";
                     cuerpo.appendChild(vacio);
                 }
 
-                // Evento click
                 titulo.onclick = () => { 
                     cuerpo.classList.toggle('mostrar');
                     titulo.querySelector('span:last-child').innerText = cuerpo.classList.contains('mostrar') ? '▲' : '▼';
                 };
-                
                 listaMenu.appendChild(titulo);
                 listaMenu.appendChild(cuerpo);
             });
         } else {
-            // Si hay búsqueda, buscamos en todo
             datos.filter(d => clean(d.nombre).includes(clean(filtro))).forEach(p => listaMenu.appendChild(crearItemMenu(p)));
         }
     }
@@ -186,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderizarMenu();
 
     // ==========================================
-    // 3. LÓGICA DE PERFIL (Desplegables y Bordes)
+    // 3. LÓGICA DE PERFIL
     // ==========================================
     let galeriaActual = []; 
     let indiceGaleria = 0;
@@ -216,20 +203,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (contenedorDinamico) {
                 ordenCampos.forEach(campo => {
-                    
-                    // LÓGICA ESPECIAL PARA AFILIACIONES (DESPLEGABLE)
                     if (campo.key === 'temporada' && p.temporada) {
                         const temporadas = Array.isArray(p.temporada) ? p.temporada : [p.temporada];
-                        
                         let htmlAfiliaciones = `<div class="contenedor-afiliaciones">`;
                         
                         temporadas.forEach(temp => {
-                            // Buscar otros personajes con la misma afiliación
                             const relacionados = datos.filter(d => 
                                 d.id !== p.id && 
                                 (Array.isArray(d.temporada) ? d.temporada.includes(temp) : d.temporada === temp)
                             );
-
                             htmlAfiliaciones += `
                                 <div class="item-afiliacion">
                                     <button class="btn-desplegable" onclick="this.nextElementSibling.classList.toggle('mostrar')">
@@ -245,27 +227,13 @@ document.addEventListener('DOMContentLoaded', function() {
                             `;
                         });
                         htmlAfiliaciones += `</div>`;
-
-                        htmlDinamico += `
-                            <div class="tarjeta ${campo.clase}">
-                                <div class="dato-titulo">${campo.titulo}</div>
-                                ${htmlAfiliaciones}
-                            </div>
-                        `;
-                    } 
-                    else if (p[campo.key]) {
-                        htmlDinamico += `
-                            <div class="tarjeta ${campo.clase || ''}">
-                                ${campo.titulo ? `<div class="dato-titulo">${campo.titulo}</div>` : ''}
-                                ${campo.key === 'desc' ? '<h3 style="color:var(--naranja-cm); margin-bottom:10px;">Descripción</h3>' : ''}
-                                <p style="line-height:1.6;">${p[campo.key]}</p>
-                            </div>
-                        `;
+                        htmlDinamico += `<div class="tarjeta ${campo.clase}"><div class="dato-titulo">${campo.titulo}</div>${htmlAfiliaciones}</div>`;
+                    } else if (p[campo.key]) {
+                        htmlDinamico += `<div class="tarjeta ${campo.clase || ''}">${campo.titulo ? `<div class="dato-titulo">${campo.titulo}</div>` : ''}${campo.key === 'desc' ? '<h3 style="color:var(--naranja-cm); margin-bottom:10px;">Descripción</h3>' : ''}<p style="line-height:1.6;">${p[campo.key]}</p></div>`;
                     }
                 });
                 contenedorDinamico.innerHTML = htmlDinamico;
             }
-
             galeriaActual = p.galeria && p.galeria.length > 0 ? p.galeria : [p.fotoGrande];
             const marco = document.getElementById('marco-foto');
             if(marco) marco.onclick = () => window.abrirGaleria(0); 
@@ -343,4 +311,16 @@ document.addEventListener('DOMContentLoaded', function() {
         file ? new FileReader().onload = (e)=>save(e.target.result) && new FileReader().readAsDataURL(file) : save(null);
     };
     if(muroFandom) cargarPosts();
+
+// ==========================================
+    // 7. BOTÓN DE COLAPSAR MENÚ (FLECHITA)
+    // ==========================================
+    const btnToggle = document.getElementById('btn-toggle');
+    const contenedor = document.querySelector('.contenedor');
+
+    if (btnToggle && contenedor) {
+        btnToggle.addEventListener('click', () => {
+            contenedor.classList.toggle('colapsado');
+        });
+    }
 });
