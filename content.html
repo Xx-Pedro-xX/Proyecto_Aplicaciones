@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Histórico</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contenido-texto { max-width: 800px; margin: 40px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .contenido-texto h2 { color: var(--naranja-cm); margin-top: 20px; margin-bottom: 10px; }
+        .contenido-texto p { line-height: 1.8; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <aside class="menu">
+            <div class="logo" onclick="window.location='index.html'">CSM Wiki</div>
+            <div class="zona-buscar">
+                <input type="text" id="input-busqueda" class="buscador" placeholder="🔍 Buscar demonio...">
+            </div>
+            <div id="lista-menu" class="lista"></div>
+        </aside>
+
+        <main class="principal">
+            <header class="portada">
+                <h1>Registro Histórico</h1>
+            </header>
+
+            <div class="contenido-texto">
+                <a href="index.html" style="color:var(--azul); font-weight:bold;">← Volver al Inicio</a>
+                <hr style="margin:20px 0; border:0; border-top:1px solid #eee;">
+                
+                <h2>Arco de Introducción</h2>
+                <p>Denji es un joven atrapado en la pobreza extrema, trabajando para pagar la deuda de su padre fallecido con la yakuza...</p>
+
+                <h2>Arco del Demonio Pistola</h2>
+                <p>La búsqueda principal de la división especial es encontrar fragmentos del Demonio Pistola...</p>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

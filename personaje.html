@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Agente</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contenedor">
+        
+        <aside class="menu">
+            <div class="logo" onclick="window.location='index.html'">CSM Wiki</div>
+            <div class="zona-buscar">
+                <input type="text" id="input-busqueda" class="buscador" placeholder="🔍 Buscar demonio...">
+            </div>
+            <div id="lista-menu" class="lista"></div>
+        </aside>
+
+        <main class="principal">
+            <header class="portada">
+                <h1 id="p-nombre">Cargando...</h1>
+            </header>
+
+            <div class="perfil">
+                <div>
+                    <div id="contenedor-dinamico" class="info-extra-grid" style="margin-top: 0;"></div>
+
+                    <div style="margin-top:20px;">
+                        <a href="index.html" style="color:var(--azul); font-weight:bold;">← Volver al Archivo</a>
+                    </div>
+                </div>
+
+                <div class="marco-foto" id="marco-foto">
+                    <img id="p-foto" src="" alt="Sujeto" class="foto">
+                    <p style="text-align:center; margin-top:10px; font-size:0.8rem; color:#7f8c8d;">🔍 Click para ver galería</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="mi-modal" class="modal">
+        <span id="btn-cerrar" class="cerrar">&times;</span>
+        
+        <div class="contenedor-modal">
+            <button id="btn-anterior" class="flecha-modal">❮</button>
+            <img id="img-modal" src="">
+            <button id="btn-siguiente" class="flecha-modal">❯</button>
+        </div>
+        
+        <p id="contador-fotos" style="position:absolute; bottom:20px; color:white;">1 / 1</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

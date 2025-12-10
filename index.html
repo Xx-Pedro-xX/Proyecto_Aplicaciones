@@ -1,1 +1,86 @@
-hola
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguridad Pública - Wiki</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contenedor">
+        
+        <aside class="menu">
+            <div class="logo" onclick="window.location='index.html'">CSM Wiki</div>
+            <div class="zona-buscar">
+                <input type="text" id="input-busqueda" class="buscador" placeholder="🔍 Buscar demonio...">
+            </div>
+            <div id="lista-menu" class="lista"></div>
+        </aside>
+
+        <main class="principal">
+            <header class="portada">
+                <div>
+                    <h1>Archivo de Seguridad Pública</h1>
+                    <p>Base de datos oficial de Cazadores de Demonios.</p>
+                </div>
+            </header>
+
+            <section class="seccion-carrusel">
+                <h2 class="titulo-seccion">🔥 Agentes y Amenazas</h2>
+                <div class="carrusel-mascara">
+                    <div id="carrusel-track" class="carrusel-track"></div>
+                </div>
+            </section>
+
+            <section class="mosaico">
+                <div class="tarjeta">
+                    <div class="cabecera-noticia">
+                        <h2>📰 Boletín Oficial</h2>
+                        <span class="etiqueta-roja">En vivo</span>
+                    </div>
+                    <div id="contenedor-noticias">
+                        <p style="color:#7f8c8d;">Conectando...</p>
+                    </div>
+                </div>
+
+                <a href="content.html" class="tarjeta" style="background: var(--verde); color: white; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+                    <h2 style="font-size:2rem; margin-bottom:10px;">📜</h2>
+                    <h3>Historia</h3>
+                </a>
+            </section>
+
+            <section class="seccion-fandom">
+                <h2 class="titulo-seccion">👹 Zona Fandom</h2>
+                <p class="subtitulo-fandom">Publica contenido. Se guarda en tu navegador.</p>
+                
+                <div class="formulario-fandom">
+                    <input type="text" id="input-fandom-texto" placeholder="Escribe tu teoría..." class="input-fandom">
+                    
+                    <div class="fila-form">
+                        <label for="input-fandom-img" class="boton-subir">📷 Imagen</label>
+                        <input type="file" id="input-fandom-img" accept="image/*" hidden>
+                        <span id="nombre-archivo" style="font-size:0.8rem; color:#777; margin-left: 10px;">Sin archivo</span>
+                        
+                        <div class="opcion-spoiler">
+                            <input type="checkbox" id="check-spoiler">
+                            <label for="check-spoiler" style="cursor:pointer; font-size:0.9rem; color:#e74c3c; font-weight:bold;">⚠️ Es Spoiler</label>
+                        </div>
+
+                        <button id="btn-publicar" class="boton-publicar">Publicar Post</button>
+                    </div>
+                </div>
+
+                <div id="muro-fandom" class="muro-fandom"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <div id="mi-modal" class="modal">
+        <span id="btn-cerrar" class="cerrar">&times;</span>
+        <img id="img-modal" src="">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
