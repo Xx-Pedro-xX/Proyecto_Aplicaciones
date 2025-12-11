@@ -3,38 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Histórico</title>
+    <title>Archivos Clasificados</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .contenido-texto { max-width: 800px; margin: 40px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .contenido-texto h2 { color: var(--naranja-cm); margin-top: 20px; margin-bottom: 10px; }
-        .contenido-texto p { line-height: 1.8; margin-bottom: 15px; }
+        .contenido-texto { max-width: 900px; margin: 40px auto; background: #0f0f0f; padding: 40px; border: 1px solid #333; position: relative; }
+        .contenido-texto::before { content: "TOP SECRET"; position: absolute; top: -15px; right: 20px; background: var(--neon-rojo); color: black; padding: 5px 10px; font-weight: bold; transform: rotate(2deg); }
+        .contenido-texto h2 { color: var(--neon-naranja); margin-top: 30px; margin-bottom: 15px; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .contenido-texto p { color: #ccc; font-size: 1.1rem; }
     </style>
 </head>
 <body>
     <div class="contenedor">
         <aside class="menu">
-            <div class="logo" onclick="window.location='index.html'">CSM Wiki</div>
+            <div class="logo" onclick="window.location='index.html'">CSM DB ⛓️</div>
             <div class="zona-buscar">
-                <input type="text" id="input-busqueda" class="buscador" placeholder="🔍 Buscar demonio...">
+                <input type="text" id="input-busqueda" class="buscador" placeholder="🔎 Buscar...">
             </div>
             <div id="lista-menu" class="lista"></div>
         </aside>
 
         <main class="principal">
-            <header class="portada">
+            <header class="portada" style="min-height: 20vh; justify-content: center;">
                 <h1>Registro Histórico</h1>
             </header>
 
             <div class="contenido-texto">
-                <a href="index.html" style="color:var(--azul); font-weight:bold;">← Volver al Inicio</a>
-                <hr style="margin:20px 0; border:0; border-top:1px solid #eee;">
+                <a href="index.html" style="color:var(--neon-azul); font-weight:bold;">← REGRESAR</a>
                 
-                <h2>Arco de Introducción</h2>
-                <p>Denji es un joven atrapado en la pobreza extrema, trabajando para pagar la deuda de su padre fallecido con la yakuza...</p>
+                <h2>💾 Arco de Introducción</h2>
+                <p>Denji es un joven atrapado en la pobreza extrema, trabajando para pagar la deuda de su padre fallecido con la yakuza. Tras ser traicionado, se fusiona con su perro demonio, Pochita 🐶.</p>
 
-                <h2>Arco del Demonio Pistola</h2>
-                <p>La búsqueda principal de la división especial es encontrar fragmentos del Demonio Pistola...</p>
+                <h2>🔫 Arco del Demonio Pistola</h2>
+                <p>La búsqueda principal de la división especial es encontrar fragmentos del Demonio Pistola, una entidad que mató a 1.2 millones de personas en 5 minutos.</p>
+
+                <h2>🩸 Arco de los Asesinos Internacionales</h2>
+                <p>Cazadores de todo el mundo vienen a Japón para tomar el corazón de Chainsaw Man. El caos se desata en el infierno y en la tierra.</p>
             </div>
         </main>
     </div>

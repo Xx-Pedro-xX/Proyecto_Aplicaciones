@@ -3,52 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de Agente</title>
+    <title>Perfil de Agente | CSM DB</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="contenedor">
         
         <aside class="menu">
-            <div class="logo" onclick="window.location='index.html'">CSM Wiki</div>
-            <div class="zona-buscar">
-                <input type="text" id="input-busqueda" class="buscador" placeholder="🔍 Buscar demonio...">
+            <button id="btn-toggle" class="btn-toggle"><span class="flecha">◀</span></button>
+            <div class="menu-contenido">
+                <div class="logo" onclick="window.location='index.html'">CSM DB ⛓️</div>
+                <div class="zona-buscar">
+                    <input type="text" id="input-busqueda" class="buscador" placeholder="🔎 Buscar agente...">
+                </div>
+                <div id="lista-menu" class="lista"></div>
             </div>
-            <div id="lista-menu" class="lista"></div>
         </aside>
 
         <main class="principal">
-            <header class="portada">
-                <h1 id="p-nombre">Cargando...</h1>
+            
+            <header class="portada" id="header-portada" style="background-size: cover; background-position: center;">
+                <div>
+                    <a href="index.html" style="background: black; padding: 5px 10px; font-weight: bold; font-size: 0.8rem; color: var(--neon-naranja);">↞ VOLVER A BASE</a>
+                    <h1 id="p-nombre" style="margin-top: 10px;">Cargando...</h1>
+                    <div id="p-etiquetas" style="display:flex; gap:10px;"></div>
+                </div>
             </header>
 
-            <div class="perfil">
-                <div>
-                    <div id="contenedor-dinamico" class="info-extra-grid" style="margin-top: 0;"></div>
+            <div class="perfil-grid">
+                
+                <div class="columna-info">
+                    <div id="contenedor-dinamico">
+                        </div>
+                </div>
 
-                    <div style="margin-top:20px;">
-                        <a href="index.html" style="color:var(--azul); font-weight:bold;">← Volver al Archivo</a>
+                <div class="sidebar-pj">
+                    
+                    <div class="foto-principal-marco" id="marco-foto">
+                        <img id="p-foto" src="" alt="Foto Perfil" class="foto-principal">
+                        <div class="etiqueta-hover">🔍 CLIC PARA AMPLIAR</div>
+                    </div>
+
+                    <div class="contenedor-carrusel-vertical">
+                        <h4 style="margin-bottom:15px; color:white; border-bottom:1px solid #333; padding-bottom:5px;">📂 OTROS EXPEDIENTES</h4>
+                        
+                        <div id="vertical-viewport" class="carrusel-vertical-viewport">
+                            <div id="vertical-track" class="carrusel-vertical-track">
+                                </div>
+                        </div>
+                        
+                        <div style="text-align:center; font-size:0.7rem; color:#777; margin-top:10px; border-top:1px solid #222; padding-top:5px;">
+                            ↕ Usa la rueda del ratón aquí
+                        </div>
                     </div>
                 </div>
 
-                <div class="marco-foto" id="marco-foto">
-                    <img id="p-foto" src="" alt="Sujeto" class="foto">
-                    <p style="text-align:center; margin-top:10px; font-size:0.8rem; color:#7f8c8d;">🔍 Click para ver galería</p>
-                </div>
             </div>
         </main>
     </div>
 
     <div id="mi-modal" class="modal">
         <span id="btn-cerrar" class="cerrar">&times;</span>
-        
-        <div class="contenedor-modal">
-            <button id="btn-anterior" class="flecha-modal">❮</button>
-            <img id="img-modal" src="">
-            <button id="btn-siguiente" class="flecha-modal">❯</button>
-        </div>
-        
-        <p id="contador-fotos" style="position:absolute; bottom:20px; color:white;">1 / 1</p>
+        <button id="btn-anterior" class="btn-nav-modal prev">&#10094;</button>
+        <img id="img-modal" src="">
+        <button id="btn-siguiente" class="btn-nav-modal next">&#10095;</button>
     </div>
 
     <script src="script.js"></script>
