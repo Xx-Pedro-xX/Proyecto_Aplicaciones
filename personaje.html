@@ -8,11 +8,10 @@
 </head>
 <body>
     <div class="contenedor">
-        
         <aside class="menu">
             <button id="btn-toggle" class="btn-toggle"><span class="flecha">◀</span></button>
             <div class="menu-contenido">
-                <div class="logo" onclick="window.location='index.html'">CSM DB ⛓️</div>
+                <div class="logo" onclick="window.location='index.html'">CSM DATABASE</div>
                 <div class="zona-buscar">
                     <input type="text" id="input-busqueda" class="buscador" placeholder="🔎 Buscar agente...">
                 </div>
@@ -21,43 +20,34 @@
         </aside>
 
         <main class="principal">
-            
             <header class="portada" id="header-portada" style="background-size: cover; background-position: center;">
-                <div>
-                    <a href="index.html" style="background: black; padding: 5px 10px; font-weight: bold; font-size: 0.8rem; color: var(--neon-naranja);">↞ VOLVER A BASE</a>
-                    <h1 id="p-nombre" style="margin-top: 10px;">Cargando...</h1>
-                    <div id="p-etiquetas" style="display:flex; gap:10px;"></div>
+                <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 8px;">
+                    <a href="index.html" style="background: black; padding: 5px 10px; font-weight: bold; font-size: 0.8rem; color: var(--neon-naranja); border: 1px solid var(--neon-naranja);">↞ VOLVER AL INICIO</a>
+                    <h1 id="p-nombre" style="margin-top: 15px; font-size: 3rem;">Cargando...</h1>
                 </div>
             </header>
 
             <div class="perfil-grid">
-                
                 <div class="columna-info">
-                    <div id="contenedor-dinamico">
-                        </div>
+                    <div id="contenedor-dinamico"></div>
                 </div>
 
                 <div class="sidebar-pj">
-                    
                     <div class="foto-principal-marco" id="marco-foto">
                         <img id="p-foto" src="" alt="Foto Perfil" class="foto-principal">
-                        <div class="etiqueta-hover">🔍 CLIC PARA AMPLIAR</div>
+                        <div class="etiqueta-hover">🔍 CLIC PARA GALERÍA 🔍</div>
                     </div>
 
                     <div class="contenedor-carrusel-vertical">
-                        <h4 style="margin-bottom:15px; color:white; border-bottom:1px solid #333; padding-bottom:5px;">📂 OTROS EXPEDIENTES</h4>
-                        
+                        <h4 style="margin-bottom:15px; color:white; border-bottom:1px solid #333; padding-bottom:5px;">OTROS AGENTES</h4>
                         <div id="vertical-viewport" class="carrusel-vertical-viewport">
-                            <div id="vertical-track" class="carrusel-vertical-track">
-                                </div>
+                            <div id="vertical-track" class="carrusel-vertical-track"></div>
                         </div>
-                        
                         <div style="text-align:center; font-size:0.7rem; color:#777; margin-top:10px; border-top:1px solid #222; padding-top:5px;">
-                            ↕ Usa la rueda del ratón aquí
+                            ↕ Usa la rueda del ratón
                         </div>
                     </div>
                 </div>
-
             </div>
         </main>
     </div>
@@ -65,8 +55,14 @@
     <div id="mi-modal" class="modal">
         <span id="btn-cerrar" class="cerrar">&times;</span>
         <button id="btn-anterior" class="btn-nav-modal prev">&#10094;</button>
-        <img id="img-modal" src="">
         <button id="btn-siguiente" class="btn-nav-modal next">&#10095;</button>
+        <div class="modal-contenido-imagen">
+            <img id="img-modal" src="">
+        </div>
+        <div class="modal-contenido-texto">
+            <h2 id="modal-titulo-texto" class="modal-titulo-texto"></h2>
+            <div id="modal-cuerpo-texto" style="font-size: 1.1rem; line-height: 1.8; color: #ccc;"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>
