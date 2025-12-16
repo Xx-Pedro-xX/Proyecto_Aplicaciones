@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             galeria: ["img/galeriadenji.jpg", "img/galeriadenji2.jpg", "img/galeriadenji3.jpg", "img/galeriadenji4.jpg", "img/galeriadenji5.jpg", "img/galeriadenji6.jpg", "img/galeriadenji7.gif"],
             historia: "Denji es un niño, huérfano, endeudado y con una enfermedad hereditaria que lo matará pronto. <p>Tras la *Muerte* de su padre, todas las deudas de este pasan a ser heredadas por Denji. Desesperado y sin opciones, encuentra en el funeral de su padre, a <a href='personaje.html?id=pochita' class='link-interno'>Pochita</a>, un demonio con forma de perro motosierra, el cual estaba en condición crítica, y decide ayudarle a cambio de que este le preste su ayuda para poder pagar sus deudas.</p> <p>Después de varios años pagando su deuda a través de trabajo como Devil Hunter o mutilaciones a sí mismo, Denji es traicionado por la Yakuza, quien se alía con el Demonio Zombie en busca de poder, aprovechando que el Demonio Zombie posee un odio dirigido hacia el demonio motosierra (<a href='personaje.html?id=pochita' class='link-interno'>Pochita</a>).</p><p>Tras ser asesinado por el Demonio Zombie, <a href='personaje.html?id=pochita' class='link-interno'>Pochita</a> se sacrifica para salvar a Denji, fusionándose con este y dándole una segunda oportunidad de vida, con el objetivo de que cumpla aquellos sueños que tanto le compartía a <a href='personaje.html?id=pochita' class='link-interno'>Pochita</a>. Tras su fusión Denji obtuvo habilidades demoníacas, y un poder regenerativo. Con todas esas habilidades mató a los Yakuza transformados en zombies y atacó al Demonio Zombie.</p><p>Después de esto, Denji es reclutado por <a href='personaje.html?id=makima' class='link-interno'>Makima</a> para dar apoyo con sus nuevos poderes en Seguridad Pública, donde conoce a <a href='personaje.html?id=power' class='link-interno'>Power</a> y <a href='personaje.html?id=aki' class='link-interno'>Aki Hayakawa</a>, con quienes formará un vínculo muy fuerte.</p>",
             personalidad: "Una persona directa, sencilla, infantil, y de buen corazón.",
-            ranking: "#1 en la 2da Encuesta",
+            ranking: "#4 en las ultimas 2 encuestas de popularidad.",
             impactoHistoria: "Protagonista principal durante el transcurso de la primera parte, y papel protagónico en la segunda parte."
         },
         {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             historia: "Fue encontrada por el gobierno y criada como un arma.",
             personalidad: "Fría, calculadora y manipuladora.",
             ranking: "#2",
-            impactoHistoria: "Antagonista principal."
+            impactoHistoria: "Antagonista principal al final de la primera parte."
         },
         {
             id: "power",
@@ -56,15 +56,15 @@ document.addEventListener('DOMContentLoaded', function() {
             nombre: "Aki Hayakawa",
             colorTema: "--neon-azul",
             banner: "https://wallpapercave.com/wp/wp8076634.jpg",
-            temporada: ["Parte 1", "Devil Hunter", "Seguridad Pública"], 
-            desc: "Cazador de demonios con un trágico pasado.",
+            temporada: ["Parte 1", "Devil Hunter"], 
+            desc: "Cazador de demonios apegado a las normas, y una motivación .",
             img: "https://placehold.co/100x100/2980b9/white?text=Aki",
             fotoGrande: "https://placehold.co/400x600/2980b9/white?text=Aki+Full",
             galeria: [],
-            historia: "Busca venganza contra el Demonio Pistola.",
+            historia: "Tras el ataque del poderoso demonio Pistola, la familia de Aki fue asesinada.<p> Jurando venganza, Aki se une a Seguridad Pública como Devil Hunter, donde conoce a Denji y Power, formando un vínculo muy fuerte con ambos.</p>",
             personalidad: "Serio y responsable.",
             ranking: "#4",
-            impactoHistoria: "Eje emocional."
+            impactoHistoria: "Cuidador de Denji y Power, rol de hermano mayor."
         },
         {
             id: "pochita",
@@ -91,6 +91,19 @@ document.addEventListener('DOMContentLoaded', function() {
             historia: "Enviada soviética.",
             personalidad: "Explosiva.",
             ranking: "#5"
+        },
+        {
+            id: "zombie",
+            nombre: "Demonio Zombie",
+            colorTema: "--neon-verde",
+            temporada: ["Parte 1", "Demonio"],
+            desc: "El demonio que controla los muertos.",
+            img: "https://placehold.co/100x100/27ae60/white?text=Zombie",
+            fotoGrande: "https://placehold.co/400x600/27ae60/white?text=Zombie+Full",
+            galeria: [],
+            historia: "Demonio con pasado conflictivo con el demonio motosierra, odio primitivo hacia los seres humanos y un deseo de venganza.",
+            personalidad: "Miedoso, embustero, y controlador.",
+            ranking: "#6"
         }
     ];
 
@@ -301,8 +314,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (contenedorNoticias) {
         const noticiasDB = [
-            { tipo: 'novedad', tag: 'ALERTA', txt: 'El Demonio Pistola ha reaparecido en el sector 4.', time: '2m' },
-            { tipo: 'info', tag: 'INFO', txt: 'Nuevas vacantes en Seguridad Pública.', time: '1h' }
+            { tipo: 'novedad', tag: 'Publicación', txt: 'Ya disponibles los resultados de la 3ra encuesta de popularidad.', time: '2m' },
+            { tipo: 'info', tag: 'Noticias', txt: 'Después de una semana de descanso, Tatsuki Fujimoto publica el capítulo 223 el martes 16.', time: '5H' }
         ];
         contenedorNoticias.innerHTML = noticiasDB.map(n => `<div class="item-noticia"><div style="display:flex; align-items:center;"><span class="badge ${n.tipo}">${n.tag}</span> <span style="color:#ddd; font-size:0.9rem;">${n.txt}</span></div><small style="color:#666; font-size:0.75rem; min-width:40px; text-align:right;">${n.time}</small></div>`).join('');
     }
