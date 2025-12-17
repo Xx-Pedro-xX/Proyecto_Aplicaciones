@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ==========================================
-    // 1. BASE DE DATOS
+    // 1. BASE DE DATOS (LORE CANÓNICO REVISADO)
     // ==========================================
     const datos = [
         {
@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
             banner: "img/bannerdenji.jpg",
             bannerPos: "center",
             temporada: ["Parte 1", "Híbrido", "Parte 2", "Híbrido"], 
-            desc: "Joven traumado, deseoso de afecto y comodidad, con actitudes excéntricas.",
+            desc: "Joven con un pasado trágico que busca identidad y afecto.",
             img: "img/denji.jpg",
             fotoGrande: "img/denjigrande.jpg",
             galeria: ["img/galeriadenji.jpg", "img/galeriadenji2.jpg", "img/galeriadenji3.jpg", "img/galeriadenji4.jpg", "img/galeriadenji5.jpg", "img/galeriadenji6.jpg", "img/galeriadenji7.gif"],
-            historia: "Denji es un niño, huérfano, endeudado y con una enfermedad hereditaria que lo matará pronto. <p>Tras la *Muerte* de su padre, todas las deudas de este pasan a ser heredadas por Denji. Desesperado y sin opciones, encuentra en el funeral de su padre, a <a href='personaje.html?id=pochita' class='link-interno'>Pochita</a>, un demonio con forma de perro motosierra, el cual estaba en condición crítica, y decide ayudarle a cambio de que este le preste su ayuda para poder pagar sus deudas.</p> <p>Después de varios años pagando su deuda a través de trabajo como Devil Hunter o mutilaciones a sí mismo, Denji es traicionado por la Yakuza, quien se alía con el Demonio Zombie en busca de poder, aprovechando que el Demonio Zombie posee un odio dirigido hacia el demonio motosierra (<a href='personaje.html?id=pochita' class='link-interno'>Pochita</a>).</p><p>Tras ser asesinado por el Demonio Zombie, <a href='personaje.html?id=pochita' class='link-interno'>Pochita</a> se sacrifica para salvar a Denji, fusionándose con este y dándole una segunda oportunidad de vida, con el objetivo de que cumpla aquellos sueños que tanto le compartía a <a href='personaje.html?id=pochita' class='link-interno'>Pochita</a>. Tras su fusión Denji obtuvo habilidades demoníacas, y un poder regenerativo. Con todas esas habilidades mató a los Yakuza transformados en zombies y atacó al Demonio Zombie.</p><p>Después de esto, Denji es reclutado por <a href='personaje.html?id=makima' class='link-interno'>Makima</a> para dar apoyo con sus nuevos poderes en Seguridad Pública, donde conoce a <a href='personaje.html?id=power' class='link-interno'>Power</a> y <a href='personaje.html?id=aki' class='link-interno'>Aki Hayakawa</a>, con quienes formará un vínculo muy fuerte.</p>",
-            personalidad: "Una persona directa, sencilla, infantil, y de buen corazón.",
-            ranking: "#4 en las ultimas 2 encuestas de popularidad.",
-            impactoHistoria: "Protagonista principal durante el transcurso de la primera parte, y papel protagónico en la segunda parte."
+            historia: "<p>Denji creció en la pobreza extrema, heredando la deuda de su padre con la Yakuza. Vivió como talador y cazador ilegal junto a <a href='personaje.html?id=pochita' class='link-interno'>Pochita</a>, vendiendo sus órganos para sobrevivir. Tras ser descuartizado por el <a href='personaje.html?id=zombie' class='link-interno'>Demonio Zombie</a>, Pochita se convirtió en su corazón, resucitándolo como 'Chainsaw Man'.</p><p>Fue reclutado por <a href='personaje.html?id=makima' class='link-interno'>Makima</a> para Seguridad Pública, donde encontró una familia con <a href='personaje.html?id=aki' class='link-interno'>Aki</a> y <a href='personaje.html?id=power' class='link-interno'>Power</a>. Sin embargo, su vida fue manipulada por Makima para romper su contrato con Pochita.</p><p>Tras derrotar al Demonio del Control, Denji se hace cargo de su reencarnación, <a href='personaje.html?id=nayuta' class='link-interno'>Nayuta</a>. En la Parte 2, asiste a la escuela secundaria mientras intenta equilibrar su vida normal con su identidad secreta de Chainsaw Man.</p>",
+            personalidad: "Impulsivo y motivado por deseos sencillos, pero con gran empatía y resistencia mental.",
+            ranking: "#4 en la 3ra encuesta (66,175 votos).",
+            impactoHistoria: "Protagonista y contenedor del Demonio Motosierra."
         },
         {
             id: "makima",
@@ -27,83 +27,392 @@ document.addEventListener('DOMContentLoaded', function() {
             banner: "img/bannermakima.jpg",
             bannerPos: "top",
             temporada: ["Parte 1", "Demonio", "Seguridad Pública"], 
-            desc: "La misteriosa líder de la División 4.",
-            img: "https://placehold.co/100x100/c0392b/white?text=Makima",
+            desc: "La encarnación del Demonio del Control.",
+            img: "img/makima.jpg",
             fotoGrande: "img/makimagrande.jpg",
-            galeria: ["https://placehold.co/800x600/c0392b/FFF?text=Makima+1"],
-            historia: "Fue encontrada por el gobierno y criada como un arma.",
-            personalidad: "Fría, calculadora y manipuladora.",
-            ranking: "#2",
-            impactoHistoria: "Antagonista principal al final de la primera parte."
+            galeria: ["img/galeriamakima.jpg", "img/galeriamakima2.jpg", "img/galeriamakima3.jpg", "img/galeriamakima4.jpg", "img/galeriamakima5.jpg", "img/galeriamakima6.jpg"],
+            historia: "<p>Makima es el <strong>Demonio del Control</strong>, uno de los Cuatro Jinetes. Se infiltró en la sociedad humana como una oficial de alto rango en Seguridad Pública. Posee un contrato con el Primer Ministro de Japón que transfiere cualquier daño fatal que reciba a un ciudadano japonés aleatorio.</p><p>Su objetivo era controlar a <a href='personaje.html?id=pochita' class='link-interno'>Pochita</a> para usar su poder de borrado conceptual y crear un mundo ideal sin muerte, guerra ni hambre. Para lograrlo, orquestó sistemáticamente la felicidad y posterior desgracia de <a href='personaje.html?id=denji' class='link-interno'>Denji</a>, siendo la responsable directa de la muerte de <a href='personaje.html?id=power' class='link-interno'>Power</a> y de la conversión de <a href='personaje.html?id=aki' class='link-interno'>Aki</a> en el Hombre Demonio Pistola.</p><p>Fue derrotada por Denji, quien logró evadir sus sentidos y la mató. Posteriormente, Denji consumió su cuerpo para evitar que se regenerara. Reencarnó como <a href='personaje.html?id=nayuta' class='link-interno'>Nayuta</a>.</p>",
+            personalidad: "Autoritaria, manipuladora y fanática de Chainsaw Man.",
+            ranking: "#2 en las tres primeras encuestas.",
+            impactoHistoria: "Antagonista principal de la Parte 1."
         },
         {
             id: "power",
             nombre: "Power",
             colorTema: "--neon-rojo",
-            banner: "https://images7.alphacoders.com/129/1290373.jpg",
+            banner: "img/bannerpower.jpg",
             temporada: ["Parte 1", "Poseído", "Seguridad Pública"], 
-            desc: "La poseída de la sangre.",
-            img: "https://placehold.co/100x100/ff6b6b/white?text=Power",
-            fotoGrande: "https://placehold.co/400x600/ff6b6b/white?text=Power+Full",
-            galeria: ["https://placehold.co/800x600/ff6b6b/FFF?text=Power+Galeria"],
-            historia: "Forma una familia caótica con Denji y Aki.",
-            personalidad: "Impulsiva, mentirosa compulsiva.",
-            ranking: "#3",
-            impactoHistoria: "Mejor amiga de Denji."
+            desc: "La Poseída de la Sangre.",
+            img: "img/power.jpg",
+            fotoGrande: "img/powergrande.jpg",
+            galeria: ["img/galeriapower.jpg", "img/galeriapower2.jpg", "img/galeriapower3.jpg", "img/galeriapower4.jpg", "img/galeriapower5.jpg", "img/galeriapower6.jpg"],
+            historia: "<p>Power es la Poseída de la Sangre. Se unió a la División 4 tras ser chantajeada por <a href='personaje.html?id=makima' class='link-interno'>Makima</a>. Aunque inicialmente solo le importaba su gata Nyako, terminó desarrollando un vínculo familiar profundo con <a href='personaje.html?id=denji' class='link-interno'>Denji</a> y <a href='personaje.html?id=aki' class='link-interno'>Aki</a>.</p><p>Sufrió un trauma severo tras enfrentarse al <a href='personaje.html?id=oscuridad' class='link-interno'>Demonio de la Oscuridad</a> en el Infierno, volviéndose dependiente del cuidado de sus compañeros. Fue asesinada por Makima frente a Denji para romper su espíritu.</p><p>Gracias a la sangre que Denji había consumido de ella, logró revivir temporalmente como el Demonio de la Sangre completo. Se sacrificó para salvar a Denji, haciendo un contrato final con él para que busque al Demonio de la Sangre en el futuro y la traiga de vuelta.</p>",
+            personalidad: "Egoísta, mentirosa y caótica, pero leal a su familia.",
+            ranking: "#1 en la 1ra encuesta; #3 en la 2da; #5 en la 3ra.",
+            impactoHistoria: "Mejor amiga de Denji y núcleo emocional del grupo."
         },
         {
             id: "aki",
             nombre: "Aki Hayakawa",
             colorTema: "--neon-azul",
-            banner: "https://wallpapercave.com/wp/wp8076634.jpg",
-            temporada: ["Parte 1", "Devil Hunter"], 
-            desc: "Cazador de demonios apegado a las normas, y una motivación .",
-            img: "https://placehold.co/100x100/2980b9/white?text=Aki",
-            fotoGrande: "https://placehold.co/400x600/2980b9/white?text=Aki+Full",
-            galeria: [],
-            historia: "Tras el ataque del poderoso demonio Pistola, la familia de Aki fue asesinada.<p> Jurando venganza, Aki se une a Seguridad Pública como Devil Hunter, donde conoce a Denji y Power, formando un vínculo muy fuerte con ambos.</p>",
-            personalidad: "Serio y responsable.",
-            ranking: "#4",
-            impactoHistoria: "Cuidador de Denji y Power, rol de hermano mayor."
+            banner: "img/banneraki.jpg",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Devil Hunter", "Seguridad Pública"], 
+            desc: "Cazador de Demonios motivado por la venganza.",
+            img: "img/aki.jpg",
+            fotoGrande: "img/akigrande.jpg",
+            galeria: ["img/galeriaaki.jpg", "img/galeriaaki2.jpg", "img/galeriaaki3.jpg", "img/galeriaaki4.jpg", "img/galeriaaki5.jpg", "img/galeriaaki6.jpg"],
+            historia: "<p>Aki dedicó su vida a cazar al Demonio Pistola, quien mató a su familia. Trabajó bajo la tutela de <a href='personaje.html?id=himeno' class='link-interno'>Himeno</a> y se convirtió en el tutor de <a href='personaje.html?id=denji' class='link-interno'>Denji</a> y <a href='personaje.html?id=power' class='link-interno'>Power</a>. Realizó contratos con los demonios Zorro, Maldición y Futuro, sacrificando gran parte de su esperanza de vida.</p><p>Con el tiempo, su deseo de proteger a Denji y Power superó su sed de venganza. Intentó retirar a su 'familia' de la operación contra el Demonio Pistola para salvarlos.</p><p>Sin embargo, <a href='personaje.html?id=makima' class='link-interno'>Makima</a> lo obligó a realizar un contrato con ella. Fue asesinado y su cuerpo fue poseído por el Demonio Pistola, convirtiéndose en el Hombre Demonio Pistola. Atacó a Denji, quien se vio obligado a matarlo en defensa propia mientras Aki alucinaba que jugaba con bolas de nieve.</p>",
+            personalidad: "Serio, estoico y doméstico.",
+            ranking: "#3 en la 3ra encuesta; #1 en la 2da.",
+            impactoHistoria: "La tragedia central de la Parte 1."
         },
         {
             id: "pochita",
             nombre: "Pochita",
             colorTema: "--neon-naranja",
+            banner: "img/bannerpochita.jpg",
             temporada: ["Parte 1", "Demonio"],
-            desc: "El héroe del infierno.",
-            img: "https://placehold.co/100x100/d35400/white?text=Pochita",
-            fotoGrande: "https://placehold.co/400x600/d35400/white?text=Pochita+Full",
+            desc: "El Demonio Motosierra original.",
+            img: "img/pochita.jpg",
+            fotoGrande: "img/pochitagrande.jpg",
+            galeria: ["img/galeriapochita.jpg", "img/galeriapochita2.jpg", "img/galeriapochita3.jpg", "img/galeriapochita4.jpg", "img/galeriapochita5.jpg", "img/galeriapochita6.jpg", "img/galeriapochita7.jpg", "img/galeriapochita8.jpg", "img/galeriapochita9.jpg"],
+            historia: "<p>Pochita es el <strong>Héroe del Infierno</strong>, el demonio que todos los demonios temen porque tiene la capacidad de borrar de la existencia los nombres que devora (eliminando conceptos como los Nazis, la Estrella de Arnolone, etc.).</p><p>Tras ser herido por los Jinetes, adoptó la forma de perro y fue salvado por <a href='personaje.html?id=denji' class='link-interno'>Denji</a>. Se convirtió en el corazón de Denji para salvarle la vida, estableciendo un contrato para ver sus sueños.</p><p>En el clímax de la Parte 1, tomó el control del cuerpo de Denji para protegerlo, luchando contra <a href='personaje.html?id=makima' class='link-interno'>Makima</a> y los Híbridos. Su deseo siempre fue recibir un abrazo, algo que su fuerza le impedía hasta que conoció a Denji.</p>",
+            personalidad: "Leal y protector.",
+            ranking: "#9 en la 3ra encuesta.",
+            impactoHistoria: "La fuente del poder de Denji."
+        },
+        {
+            id: "himeno",
+            nombre: "Himeno",
+            colorTema: "--neon-azul",
+            banner: "https://placehold.co/1200x400/1e7db8/white?text=Himeno",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Devil Hunter"],
+            desc: "Mentora de Aki y contratista del Fantasma.",
+            img: "https://placehold.co/100x100/1e7db8/white?text=Himeno",
+            fotoGrande: "https://placehold.co/400x600/1e7db8/white?text=Himeno+Full",
             galeria: [],
-            historia: "Salvó a Denji dándole su corazón.",
-            personalidad: "Leal y adorable.",
-            ranking: "#??"
+            historia: "<p>Himeno era una cazadora veterana de la División 4 y la compañera de <a href='personaje.html?id=aki' class='link-interno'>Aki</a>, de quien estaba enamorada. Había perdido a múltiples compañeros, adoptando una actitud cínica y viciosa para sobrellevar el dolor. Tenía un contrato con el Demonio Fantasma a cambio de su ojo derecho.</p><p>Durante la emboscada de <a href='personaje.html?id=katana' class='link-interno'>Katana Man</a> y Akane Sawatari, Himeno sacrificó todo su cuerpo ofreciéndoselo al Demonio Fantasma para intentar matar a Katana Man y salvar la vida de Aki. Su cuerpo desapareció completamente, dejando solo su ropa en el suelo.</p>",
+            personalidad: "Relajada, madura y sacrificada.",
+            ranking: "#12 en la 3ra encuesta.",
+            impactoHistoria: "Su sacrificio marcó el inicio de la tragedia de la División 4."
         },
         {
             id: "reze",
             nombre: "Reze",
             colorTema: "--neon-morado",
             temporada: ["Parte 1", "Híbrido"],
-            desc: "La chica bomba.",
+            desc: "La Chica Bomba, agente soviética.",
             img: "https://placehold.co/100x100/8e44ad/white?text=Reze",
             fotoGrande: "https://placehold.co/400x600/8e44ad/white?text=Reze+Full",
             galeria: [],
-            historia: "Enviada soviética.",
-            personalidad: "Explosiva.",
-            ranking: "#5"
+            historia: "<p>Reze es una Híbrida del Demonio Bomba y soldado de la URSS. Se acercó a <a href='personaje.html?id=denji' class='link-interno'>Denji</a> fingiendo interés romántico para robar su corazón. Le enseñó a nadar y compartieron momentos íntimos, aunque todo era parte de su misión.</p><p>Tras una batalla destructiva donde casi mata a Denji, este le perdonó la vida y le propuso huir juntos. Reze decidió abandonar su misión y volver al café para encontrarse con él, enamorándose realmente.</p><p>Sin embargo, fue interceptada en un callejón por <a href='personaje.html?id=makima' class='link-interno'>Makima</a> y el Demonio Ángel. Fue asesinada antes de poder reunirse con Denji y posteriormente controlada como títere contra Pochita.</p>",
+            personalidad: "Manipuladora pero con anhelos de libertad.",
+            ranking: "#1 en la 3ra encuesta.",
+            impactoHistoria: "El primer amor trágico de Denji."
+        },
+        {
+            id: "katana",
+            nombre: "Katana Man",
+            colorTema: "--neon-gris",
+            banner: "https://placehold.co/1200x400/333/white?text=Katana+Man",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Híbrido", "Parte 2"],
+            desc: "Híbrido del Demonio Katana y nieto del Yakuza.",
+            img: "https://placehold.co/100x100/333/white?text=Katana",
+            fotoGrande: "https://placehold.co/400x600/333/white?text=Katana+Full",
+            galeria: [],
+            historia: "<p>Conocido como Samurai Sword, es el nieto del jefe Yakuza asesinado por <a href='personaje.html?id=denji' class='link-interno'>Denji</a>. Se convirtió en el Híbrido Katana gracias a Akane Sawatari y el Demonio Pistola. Orquestó el tiroteo masivo contra los Devil Hunters en Tokio.</p><p>Fue derrotado por Denji en un duelo donde Denji usó el ingenio en lugar de la fuerza bruta. Fue arrestado, pero luego reapareció controlado por <a href='personaje.html?id=makima' class='link-interno'>Makima</a>. En la Parte 2, trabaja para Seguridad Pública.</p>",
+            personalidad: "Vengativo y sádico.",
+            ranking: "#24 en la 3ra encuesta.",
+            impactoHistoria: "Primer gran rival híbrido de Denji."
+        },
+        {
+            id: "kishibe",
+            nombre: "Kishibe",
+            colorTema: "--neon-gris",
+            banner: "https://placehold.co/1200x400/4a4a4a/white?text=Kishibe",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Devil Hunter", "Seguridad Pública"],
+            desc: "El cazador más fuerte de la División 1.",
+            img: "https://placehold.co/100x100/4a4a4a/white?text=Kishibe",
+            fotoGrande: "https://placehold.co/400x600/4a4a4a/white?text=Kishibe+Full",
+            galeria: [],
+            historia: "<p>Kishibe es un maestro cazador estoico. Entrenó a <a href='personaje.html?id=denji' class='link-interno'>Denji</a> y <a href='personaje.html?id=power' class='link-interno'>Power</a> matándolos repetidamente. Fue el único que desconfió de <a href='personaje.html?id=makima' class='link-interno'>Makima</a> desde el inicio y planeó la resistencia contra ella.</p><p>Tras la muerte de Makima, rescató a su reencarnación, <a href='personaje.html?id=nayuta' class='link-interno'>Nayuta</a>, y se la dio a Denji para evitar que el gobierno la criara nuevamente como un arma.</p>",
+            personalidad: "Pragmático y protector.",
+            ranking: "#15 en la 3ra encuesta.",
+            impactoHistoria: "Líder de la resistencia contra Makima."
+        },
+        {
+            id: "quanxi",
+            nombre: "Quanxi",
+            colorTema: "--neon-rosa",
+            banner: "https://placehold.co/1200x400/e91e63/white?text=Quanxi",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Híbrido", "Parte 2"],
+            desc: "La primera Devil Hunter y Híbrida del Demonio Ballesta.",
+            img: "https://placehold.co/100x100/e91e63/white?text=Quanxi",
+            fotoGrande: "https://placehold.co/400x600/e91e63/white?text=Quanxi+Full",
+            galeria: [],
+            historia: "<p>Quanxi es una antigua cazadora china y Híbrida del Demonio Ballesta. Llegó a Japón para capturar a Denji. Es increíblemente rápida y letal en combate cuerpo a cuerpo. Tiene una historia pasada con <a href='personaje.html?id=kishibe' class='link-interno'>Kishibe</a>.</p><p>Fue decapitada por <a href='personaje.html?id=makima' class='link-interno'>Makima</a> después de rendirse para pedir clemencia por sus amantes (fiends). Reaparece en la Parte 2 trabajando para Seguridad Pública.</p>",
+            personalidad: "Tranquila y hedonista.",
+            ranking: "#14 en la 3ra encuesta.",
+            impactoHistoria: "Muestra el nivel de poder global."
+        },
+        {
+            id: "kobeni",
+            nombre: "Kobeni Higashiyama",
+            colorTema: "--neon-naranja",
+            banner: "https://placehold.co/1200x400/e67e22/white?text=Kobeni",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Devil Hunter", "Seguridad Pública"],
+            desc: "Cazadora con ansiedad extrema pero gran habilidad.",
+            img: "https://placehold.co/100x100/e67e22/white?text=Kobeni",
+            fotoGrande: "https://placehold.co/400x600/e67e22/white?text=Kobeni+Full",
+            galeria: [],
+            historia: "<p>Kobeni trabaja como Devil Hunter forzada por su familia. Sufre de pánico constante pero es extremadamente hábil en combate. Sobrevivió a los encuentros con el Demonio de la Eternidad, Katana Man y el Infierno.</p><p>Renunció a Seguridad Pública y terminó trabajando en una hamburguesería, donde fue 'secuestrada' por Chainsaw Man para una cita. Es una de las pocas supervivientes de la Parte 1.</p>",
+            personalidad: "Ansiosa y desafortunada.",
+            ranking: "#13 en la 3ra encuesta.",
+            impactoHistoria: "Superviviente improbable."
+        },
+        {
+            id: "santa",
+            nombre: "Santa Claus",
+            colorTema: "--neon-gris",
+            banner: "https://placehold.co/1200x400/555/white?text=Santa+Claus",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Humano", "Contratista"],
+            desc: "Asesina alemana contratista del Demonio Muñeca.",
+            img: "https://placehold.co/100x100/555/white?text=Santa",
+            fotoGrande: "https://placehold.co/400x600/555/white?text=Santa+Full",
+            galeria: [],
+            historia: "<p>Santa Claus es una mente colmena controlada por una mujer llamada 'Maestra'. Tiene un contrato con el Demonio Muñeca. Hizo un trato con el Demonio de la Oscuridad para matar a <a href='personaje.html?id=makima' class='link-interno'>Makima</a>, entregándole a cambio el corazón de Denji (enviando a todos al Infierno).</p><p>Fue derrotada por una estrategia combinada de Denji (que se prendió fuego para anular sus poderes en la oscuridad) y el ataque mental de Cosmo.</p>",
+            personalidad: "Siniestra y calculadora.",
+            ranking: "N/A",
+            impactoHistoria: "Provocó el viaje al Infierno."
+        },
+        {
+            id: "asa",
+            nombre: "Asa Mitaka",
+            colorTema: "--neon-verde",
+            banner: "https://placehold.co/1200x400/27ae60/white?text=Asa",
+            bannerPos: "center",
+            temporada: ["Parte 2", "Híbrido"],
+            desc: "Protagonista de la Parte 2, anfitriona del Demonio de la Guerra.",
+            img: "https://placehold.co/100x100/27ae60/white?text=Asa",
+            fotoGrande: "https://placehold.co/400x600/27ae60/white?text=Asa+Full",
+            galeria: [],
+            historia: "<p>Asa es una estudiante solitaria que murió y fue revivida por <a href='personaje.html?id=yoru' class='link-interno'>Yoru</a>, convirtiéndose en su anfitriona. Comparten cuerpo con el objetivo de matar a Chainsaw Man.</p><p>Asa desarrolla sentimientos por <a href='personaje.html?id=denji' class='link-interno'>Denji</a> sin saber que él es su objetivo. Es manipulada por <a href='personaje.html?id=morti' class='link-interno'>Fami</a> para convertirse en un símbolo de la Iglesia de Chainsaw Man.</p>",
+            personalidad: "Insegura y orgullosa.",
+            ranking: "#10 en la 3ra encuesta.",
+            impactoHistoria: "Protagonista de la Parte 2."
+        },
+        {
+            id: "yoru",
+            nombre: "Yoru (Guerra)",
+            colorTema: "--neon-rojo",
+            banner: "https://placehold.co/1200x400/e74c3c/white?text=Yoru",
+            bannerPos: "center",
+            temporada: ["Parte 2", "Demonio"],
+            desc: "El Demonio de la Guerra, uno de los Cuatro Jinetes.",
+            img: "https://placehold.co/100x100/e74c3c/white?text=Yoru",
+            fotoGrande: "https://placehold.co/400x600/e74c3c/white?text=Yoru+Full",
+            galeria: [],
+            historia: "<p>Yoru habita el cuerpo de <a href='personaje.html?id=asa' class='link-interno'>Asa</a>. Está debilitada porque Pochita se comió al Demonio de las Armas Nucleares. Su poder crea armas basadas en la culpa de su dueño. Busca matar a Chainsaw Man para recuperar su poder original.</p>",
+            personalidad: "Beligerante y tonta.",
+            ranking: "#16 en la 3ra encuesta.",
+            impactoHistoria: "Fuerza motriz de la Parte 2."
+        },
+        {
+            id: "nayuta",
+            nombre: "Nayuta",
+            colorTema: "--neon-morado",
+            banner: "https://placehold.co/1200x400/8e44ad/white?text=Nayuta",
+            bannerPos: "center",
+            temporada: ["Parte 2", "Demonio"],
+            desc: "La nueva Demonio del Control.",
+            img: "https://placehold.co/100x100/8e44ad/white?text=Nayuta",
+            fotoGrande: "https://placehold.co/400x600/8e44ad/white?text=Nayuta+Full",
+            galeria: [],
+            historia: "<p>La reencarnación de Makima, criada por Denji. Es una niña controladora pero que ama a Denji como a un hermano. Interfiere en la vida de Denji protegiéndolo de los otros Jinetes.</p>",
+            personalidad: "Posesiva y lista.",
+            ranking: "#11 en la 3ra encuesta.",
+            impactoHistoria: "El legado de Makima."
+        },
+        {
+            id: "morti",
+            nombre: "Fami (Kiga)",
+            colorTema: "--neon-rosa",
+            banner: "https://placehold.co/1200x400/e91e63/white?text=Morti",
+            bannerPos: "center",
+            temporada: ["Parte 2", "Demonio"],
+            desc: "El Demonio de la Hambruna.",
+            img: "https://placehold.co/100x100/e91e63/white?text=Morti",
+            fotoGrande: "https://placehold.co/400x600/e91e63/white?text=Morti+Full",
+            galeria: [],
+            historia: "<p>Kiga es la hermana mayor de Guerra y Control. Lidera la Iglesia de Chainsaw Man en las sombras. Busca detener la profecía de Nostradamus controlando a Chainsaw Man y a Yoru.</p>",
+            personalidad: "Glotona y misteriosa.",
+            ranking: "N/A",
+            impactoHistoria: "Manipuladora de la Parte 2."
+        },
+        {
+            id: "barem",
+            nombre: "Barem Bridge",
+            colorTema: "--neon-naranja",
+            banner: "https://placehold.co/1200x400/d35400/white?text=Barem",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Híbrido", "Parte 2"],
+            desc: "Híbrido del Lanzallamas y fanático de Makima.",
+            img: "https://placehold.co/100x100/d35400/white?text=Barem",
+            fotoGrande: "https://placehold.co/400x600/d35400/white?text=Barem+Full",
+            galeria: [],
+            historia: "<p>Barem es un Híbrido que servía a Makima. En la Parte 2, lidera la Iglesia bajo órdenes de Fami. Quemó la casa y las mascotas de Denji para obligarlo a pelear.</p>",
+            personalidad: "Sádico y tranquilo.",
+            ranking: "N/A",
+            impactoHistoria: "Villano ejecutor en Parte 2."
+        },
+        {
+            id: "yoshida",
+            nombre: "Hirofumi Yoshida",
+            colorTema: "--neon-amarillo",
+            banner: "https://placehold.co/1200x400/f1c40f/white?text=Yoshida",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Parte 2", "Devil Hunter"],
+            desc: "Cazador privado que vigila a Denji.",
+            img: "https://placehold.co/100x100/f1c40f/white?text=Yoshida",
+            fotoGrande: "https://placehold.co/400x600/f1c40f/white?text=Yoshida+Full",
+            galeria: [],
+            historia: "<p>Cazador de élite con contrato del Pulpo. Protegió a Denji en la Parte 1. En la Parte 2, trabaja para una organización secreta vigilando que Denji no se transforme.</p>",
+            personalidad: "Enigmático.",
+            ranking: "#8 en la 3ra encuesta.",
+            impactoHistoria: "Vigilante de Denji."
+        },
+        {
+            id: "beam",
+            nombre: "Beam",
+            colorTema: "--neon-cyan",
+            banner: "https://placehold.co/1200x400/00bcd4/white?text=Beam",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Poseído", "Seguridad Pública"],
+            desc: "El Poseído Tiburón.",
+            img: "https://placehold.co/100x100/00bcd4/white?text=Beam",
+            fotoGrande: "https://placehold.co/400x600/00bcd4/white?text=Beam+Full",
+            galeria: [],
+            historia: "<p>Devoto seguidor de Chainsaw Man. Ayudó a Denji contra Reze. Murió en el infierno asesinado por el Demonio de la Oscuridad.</p>",
+            personalidad: "Fanático y leal.",
+            ranking: "#7 en la 3ra encuesta.",
+            impactoHistoria: "Apoyo leal."
+        },
+        {
+            id: "angel",
+            nombre: "Ángel",
+            colorTema: "--neon-blanco",
+            banner: "https://placehold.co/1200x400/ecf0f1/white?text=Angel",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Demonio", "Seguridad Pública"],
+            desc: "El Demonio Ángel.",
+            img: "https://placehold.co/100x100/ecf0f1/white?text=Angel",
+            fotoGrande: "https://placehold.co/400x600/ecf0f1/white?text=Angel+Full",
+            galeria: [],
+            historia: "<p>Demonio que absorbe vida. Amigo de Aki. Fue manipulado por Makima para matar a su pueblo. Murió (presumiblemente) bajo el control de Makima en la batalla final.</p>",
+            personalidad: "Perezoso.",
+            ranking: "#6 en la 3ra encuesta.",
+            impactoHistoria: "Amigo de Aki."
+        },
+        {
+            id: "galgali",
+            nombre: "Galgali (Violencia)",
+            colorTema: "--neon-rojo",
+            banner: "https://placehold.co/1200x400/c0392b/white?text=Galgali",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Poseído", "Seguridad Pública"],
+            desc: "El Poseído de la Violencia.",
+            img: "https://placehold.co/100x100/c0392b/white?text=Galgali",
+            fotoGrande: "https://placehold.co/400x600/c0392b/white?text=Galgali+Full",
+            galeria: [],
+            historia: "<p>Poseído extremadamente fuerte pero pacifista. Compañero de Kobeni. Murió luchando contra el Demonio de la Oscuridad para protegerla.</p>",
+            personalidad: "Educado.",
+            ranking: "#17 en la 3ra encuesta.",
+            impactoHistoria: "Protector de Kobeni."
+        },
+        {
+            id: "oscuridad",
+            nombre: "Demonio de la Oscuridad",
+            colorTema: "--neon-morado",
+            banner: "https://placehold.co/1200x400/8e44ad/white?text=Oscuridad",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Demonio"],
+            desc: "Demonio Primordial.",
+            img: "https://placehold.co/100x100/8e44ad/white?text=Oscuridad",
+            fotoGrande: "https://placehold.co/400x600/8e44ad/white?text=Oscuridad+Full",
+            galeria: [],
+            historia: "<p>Demonio Primordial que nunca ha muerto. Apareció en el Infierno y masacró a los cazadores. Solo Makima pudo escapar de él.</p>",
+            personalidad: "Aterrador.",
+            ranking: "#35 en la 3ra encuesta.",
+            impactoHistoria: "Escala de poder absoluta."
+        },
+        {
+            id: "yuko",
+            nombre: "Yuko",
+            colorTema: "--neon-verde",
+            banner: "https://placehold.co/1200x400/16a085/white?text=Yuko",
+            bannerPos: "center",
+            temporada: ["Parte 2", "Seguridad Pública"],
+            desc: "Amiga de Asa.",
+            img: "https://placehold.co/100x100/16a085/white?text=Yuko",
+            fotoGrande: "https://placehold.co/400x600/16a085/white?text=Yuko+Full",
+            galeria: [],
+            historia: "<p>Hizo un contrato con el Demonio de la Justicia (Fuego) para salvar a Asa de los acosadores. Se convirtió en un monstruo y fue asesinada.</p>",
+            personalidad: "Justiciera extrema.",
+            ranking: "#54 en la 3ra encuesta.",
+            impactoHistoria: "Desarrollo de Asa."
         },
         {
             id: "zombie",
             nombre: "Demonio Zombie",
             colorTema: "--neon-verde",
             temporada: ["Parte 1", "Demonio"],
-            desc: "El demonio que controla los muertos.",
+            desc: "Demonio esclavista.",
             img: "https://placehold.co/100x100/27ae60/white?text=Zombie",
             fotoGrande: "https://placehold.co/400x600/27ae60/white?text=Zombie+Full",
             galeria: [],
-            historia: "Demonio con pasado conflictivo con el demonio motosierra, odio primitivo hacia los seres humanos y un deseo de venganza.",
-            personalidad: "Miedoso, embustero, y controlador.",
-            ranking: "#6"
+            historia: "<p>Engañó a la Yakuza y mató a Denji, causando el nacimiento de Chainsaw Man. Fue asesinado por Denji.</p>",
+            personalidad: "Cruel.",
+            ranking: "N/A",
+            impactoHistoria: "Origen de CSM."
+        },
+        {
+            id: "fushi",
+            nombre: "Fushi",
+            colorTema: "--neon-violeta",
+            banner: "https://placehold.co/1200x400/9b59b6/white?text=Fushi",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Devil Hunter"],
+            desc: "Cazador de la División 4.",
+            img: "https://placehold.co/100x100/9b59b6/white?text=Fushi",
+            fotoGrande: "https://placehold.co/400x600/9b59b6/white?text=Fushi+Full",
+            galeria: [],
+            historia: "<p>Cazador con alto CI. Asesinado por los hombres de Katana Man.</p>",
+            personalidad: "Inteligente.",
+            ranking: "N/A",
+            impactoHistoria: "Víctima."
+        },
+        {
+            id: "emon",
+            nombre: "Emon Kigane",
+            colorTema: "--neon-gris",
+            banner: "https://placehold.co/1200x400/7f8c8d/white?text=Emon",
+            bannerPos: "center",
+            temporada: ["Parte 1", "Devil Hunter"],
+            desc: "Oficial administrativo.",
+            img: "https://placehold.co/100x100/7f8c8d/white?text=Emon",
+            fotoGrande: "https://placehold.co/400x600/7f8c8d/white?text=Emon+Full",
+            galeria: [],
+            historia: "<p>Burócrata de Seguridad Pública.</p>",
+            personalidad: "Serio.",
+            ranking: "N/A",
+            impactoHistoria: "Fondo."
         }
     ];
 
@@ -253,29 +562,26 @@ document.addEventListener('DOMContentLoaded', function() {
                     { k: 'ranking', t: 'Ranking', c: 'tarjeta-ranking' }
                 ];
                 
-                // 1. Inyectamos el HTML de todas las tarjetas (con el botón oculto por CSS)
                 contenedorInfo.innerHTML = campos.map(campo => {
                     if(!p[campo.k]) return '';
                     return `
                     <div class="tarjeta-info-expandible ${campo.c}">
                         <div class="dato-titulo">${campo.t}</div>
                         <div class="contenido-truncado">
-                            <p>${p[campo.k]}</p>
+                            ${p[campo.k].startsWith('<p>') ? p[campo.k] : `<p>${p[campo.k]}</p>`}
                         </div>
-                        <button class="btn-ver-mas" onclick="abrirModalTexto('${campo.t}', '${p.id}', '${campo.k}')">LEER MAS +</button>
+                        <button class="btn-ver-mas" onclick="abrirModalTexto('${campo.t}', '${p.id}', '${campo.k}')">LEER EXPEDIENTE COMPLETO +</button>
                     </div>`;
                 }).join('');
 
-                // 2. VERIFICACIÓN DE DESBORDAMIENTO (La clave de tu petición)
-                // Recorremos las tarjetas creadas y medimos si se desbordan.
+                // VERIFICACIÓN DE DESBORDAMIENTO (Tolerancia +1px)
                 document.querySelectorAll('.tarjeta-info-expandible').forEach(card => {
                     const textoDiv = card.querySelector('.contenido-truncado');
                     const boton = card.querySelector('.btn-ver-mas');
                     
-                    // Comparamos altura total del contenido vs altura visible (160px)
-                    if(textoDiv.scrollHeight > textoDiv.clientHeight) {
-                        boton.style.display = 'block'; // Mostramos el botón
-                        textoDiv.classList.add('con-overflow'); // Añadimos degradado
+                    if(textoDiv.scrollHeight > textoDiv.clientHeight + 1) {
+                        boton.style.display = 'block'; 
+                        textoDiv.classList.add('con-overflow'); 
                     }
                 });
             }
@@ -303,7 +609,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const imgsGaleria = (p.galeria && p.galeria.length > 0) ? p.galeria : [p.fotoGrande];
                 marcoFoto.onclick = () => abrirModal(imgsGaleria);
             }
-        } else { elNombre.innerText = "PERSONAJE NO ENCONTRADO"; }
+        } else { elNombre.innerText = "AGENTE NO ENCONTRADO"; }
     }
 
     const carruselTrack = document.getElementById('carrusel-track');
@@ -314,8 +620,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (contenedorNoticias) {
         const noticiasDB = [
-            { tipo: 'novedad', tag: 'Publicación', txt: 'Ya disponibles los resultados de la 3ra encuesta de popularidad.', time: '2m' },
-            { tipo: 'info', tag: 'Noticias', txt: 'Después de una semana de descanso, Tatsuki Fujimoto publica el capítulo 223 el martes 16.', time: '5H' }
+            { tipo: 'novedad', tag: 'Publicación', txt: 'Resultados de la 3ra encuesta disponibles.', time: '2m' },
+            { tipo: 'info', tag: 'Noticias', txt: 'Nuevos capítulos cada martes.', time: '5H' }
         ];
         contenedorNoticias.innerHTML = noticiasDB.map(n => `<div class="item-noticia"><div style="display:flex; align-items:center;"><span class="badge ${n.tipo}">${n.tag}</span> <span style="color:#ddd; font-size:0.9rem;">${n.txt}</span></div><small style="color:#666; font-size:0.75rem; min-width:40px; text-align:right;">${n.time}</small></div>`).join('');
     }
@@ -407,7 +713,10 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.classList.add('abierto');
 
         if(textoModalTitulo) textoModalTitulo.innerText = titulo;
-        if(textoModalCuerpo) textoModalCuerpo.innerHTML = p[keyCampo]; 
+        if(textoModalCuerpo) {
+            const contenido = p[keyCampo];
+            textoModalCuerpo.innerHTML = contenido.startsWith('<p>') ? contenido : `<p>${contenido}</p>`;
+        }
     };
 
     function actualizarModalImagen() { 
