@@ -3,6 +3,7 @@
    ========================================= */
 @font-face {
     font-family: 'WildWords';
+    /* Asegúrate de que esta ruta sea correcta */
     src: url('font/NewWildWordsRoman.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;

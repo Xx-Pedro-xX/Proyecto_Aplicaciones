@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nombre: "Pochita",
             colorTema: "--neon-naranja",
             banner: "img/bannerpochita.jpg",
+            bannerPos: "top",
             temporada: ["Parte 1", "Demonio"],
             desc: "El Demonio Motosierra original.",
             img: "img/pochita.jpg",
