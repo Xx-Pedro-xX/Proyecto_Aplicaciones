@@ -3,44 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archivos Clasificados</title>
+    <title>Cargando Perfil... | CSM DB</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .contenido-texto { max-width: 900px; margin: 40px auto; background: #0f0f0f; padding: 40px; border: 1px solid #333; position: relative; }
-        .contenido-texto::before { content: "TOP SECRET"; position: absolute; top: -15px; right: 20px; background: var(--neon-rojo); color: black; padding: 5px 10px; font-weight: bold; transform: rotate(2deg); }
-        .contenido-texto h2 { color: var(--neon-naranja); margin-top: 30px; margin-bottom: 15px; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 5px; }
-        .contenido-texto p { color: #ccc; font-size: 1.1rem; }
-    </style>
 </head>
 <body>
+
     <div class="contenedor">
+        
         <aside class="menu">
-            <div class="logo" onclick="window.location='index.html'">CSM DB ⛓️</div>
-            <div class="zona-buscar">
-                <input type="text" id="input-busqueda" class="buscador" placeholder="🔎 Buscar...">
+            <button id="btn-toggle" class="btn-toggle">◀</button>
+
+            <div class="menu-contenido">
+                <div class="logo" onclick="window.location='index.html'">CSM DATABASE</div>
+                
+                <div class="zona-buscar">
+                    <input type="text" id="input-busqueda" class="buscador" placeholder="🔎 Buscar agente...">
+                </div>
+                
+                <div id="lista-menu" class="lista"></div>
             </div>
-            <div id="lista-menu" class="lista"></div>
         </aside>
 
         <main class="principal">
-            <header class="portada" style="min-height: 20vh; justify-content: center;">
-                <h1>Registro Histórico</h1>
+            
+            <header class="portada" id="header-portada">
+                <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 8px; backdrop-filter: blur(2px);">
+                    <a href="index.html" style="background: black; padding: 5px 10px; font-weight: bold; font-size: 0.8rem; color: var(--color-tema-actual); border: 1px solid var(--color-tema-actual); display: inline-block; margin-bottom: 10px;">↞ VOLVER AL INICIO</a>
+                    <h1 id="p-nombre" style="margin: 0; font-size: 3rem; line-height: 1;">Cargando...</h1>
+                </div>
             </header>
 
-            <div class="contenido-texto">
-                <a href="index.html" style="color:var(--neon-azul); font-weight:bold;">← REGRESAR</a>
+            <div class="perfil-grid">
                 
-                <h2>💾 Arco de Introducción</h2>
-                <p>Denji es un joven atrapado en la pobreza extrema, trabajando para pagar la deuda de su padre fallecido con la yakuza. Tras ser traicionado, se fusiona con su perro demonio, Pochita 🐶.</p>
+                <div class="columna-info">
+                    <div id="contenedor-dinamico"></div>
+                </div>
 
-                <h2>🔫 Arco del Demonio Pistola</h2>
-                <p>La búsqueda principal de la división especial es encontrar fragmentos del Demonio Pistola, una entidad que mató a 1.2 millones de personas en 5 minutos.</p>
+                <div class="sidebar-pj">
+                    <div class="foto-principal-marco" id="marco-foto">
+                        <img id="p-foto" src="" alt="Foto Perfil" class="foto-principal">
+                        <div class="etiqueta-hover">🔍 CLIC PARA GALERÍA</div>
+                    </div>
 
-                <h2>🩸 Arco de los Asesinos Internacionales</h2>
-                <p>Cazadores de todo el mundo vienen a Japón para tomar el corazón de Chainsaw Man. El caos se desata en el infierno y en la tierra.</p>
+                    <div class="contenedor-carrusel-vertical">
+                        <h4 style="margin-bottom:15px; color:white; border-bottom:1px solid #333; padding-bottom:5px;">OTROS AGENTES</h4>
+                        <div id="vertical-viewport" class="carrusel-vertical-viewport">
+                            <div id="vertical-track" class="carrusel-vertical-track"></div>
+                        </div>
+                        <div style="text-align:center; font-size:0.7rem; color:#777; margin-top:10px; border-top:1px solid #222; padding-top:5px;">
+                            ↕ Usa la rueda del ratón
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
+
+    <div id="mi-modal" class="modal">
+        <span id="btn-cerrar" class="cerrar">&times;</span>
+        
+        <button id="btn-anterior" class="btn-nav-modal prev">&#10094;</button>
+        <button id="btn-siguiente" class="btn-nav-modal next">&#10095;</button>
+
+        <div class="modal-contenido-imagen">
+            <img id="img-modal" src="">
+        </div>
+
+        <div class="modal-contenido-texto">
+            <h2 id="modal-titulo-texto" class="modal-titulo-texto"></h2>
+            <div id="modal-cuerpo-texto" style="font-size: 1.1rem; line-height: 1.8; color: #ccc;"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
