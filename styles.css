@@ -3,34 +3,29 @@
    ========================================= */
 @font-face {
     font-family: 'WildWords';
-    /* Asegúrate de que esta ruta sea correcta */
     src: url('font/NewWildWordsRoman.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 :root {
-    /* Paleta Neón */
     --neon-azul: #00f3ff;
     --neon-verde: #0aff00;
     --neon-naranja: #ff9e00;
     --neon-rojo: #ff003c;
     --neon-morado: #bc13fe;
     
-    /* Fondos */
     --fondo-main: #050505;
     --fondo-tarjeta: #111111;
     --fondo-input: #1a1a1a;
     --borde-suave: #333;
     
-    /* Texto */
     --texto: #e0e0e0;
     
-    /* Tipografía */
     --fuente-titulo: 'WildWords', 'Impact', 'Arial Black', sans-serif;
     --fuente-cuerpo: 'Segoe UI', system-ui, sans-serif;
 
-    /* Variable Dinámica (Cambia con JS) */
+    /* Variable Dinámica */
     --color-tema-actual: var(--neon-azul);
 }
 
@@ -52,13 +47,13 @@ ul { list-style: none; }
 img { display: block; max-width: 100%; }
 p { line-height: 1.6; margin-bottom: 15px; color: #ccc; }
 
-/* Scrollbar Personalizado */
+/* Scrollbar */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: #000; }
 ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-tema-actual); }
 
-/* Tipografía Títulos */
+/* Tipografía */
 h1, h2, h3, h4, h5, 
 .logo, .dato-titulo, .badge, .etiqueta-roja, .boton-publicar, #p-nombre, .titulo-seccion {
     font-family: var(--fuente-titulo);
@@ -66,13 +61,11 @@ h1, h2, h3, h4, h5,
     letter-spacing: 1px;
 }
 
-/* Efecto Neón en textos clave */
 #p-nombre, .dato-titulo, .tarjeta-mini h5 {
     color: var(--color-tema-actual);
     text-shadow: 0 0 10px rgba(var(--color-tema-actual), 0.4);
 }
 
-/* Enlaces dentro del texto */
 .link-interno {
     color: var(--neon-naranja);
     font-weight: bold;
@@ -91,82 +84,75 @@ h1, h2, h3, h4, h5,
 }
 
 /* =========================================
-   3. LAYOUT PRINCIPAL (GRID ANIMADO)
+   3. LAYOUT PRINCIPAL (ANIMACIÓN GRID)
    ========================================= */
 .contenedor {
     display: grid;
+    /* La transición de esta propiedad es la que impulsa toda la animación */
     grid-template-columns: 280px 1fr;
     height: 100vh;
     width: 100%;
-    /* Animación suave al abrir/cerrar el menú */
     transition: grid-template-columns 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
 .contenedor.colapsado { grid-template-columns: 0px 1fr; }
 
-<<<<<<< HEAD
-/* Menú */
-.menu { background: black; border-right: 1px solid var(--borde-suave); position: relative; z-index: 100; display: flex; flex-direction: column; height: 100vh; overflow: visible; }
-.menu-contenido { display: flex; flex-direction: column; height: 100%; min-width: 280px; overflow: hidden; transition: opacity 0.2s; }
-.contenedor.colapsado .menu-contenido { opacity: 0; pointer-events: none; }
-.lista { flex-grow: 1; overflow-y: auto; min-height: 0; padding-bottom: 20px; }
-
-.btn-toggle { position: absolute; top: 50%; right: -24px; width: 24px; height: 60px; transform: translateY(-50%); background: #000; border: 1px solid var(--neon-naranja); border-left: none; color: var(--neon-naranja); cursor: pointer; z-index: 101; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: 0.3s; border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
-.btn-toggle:hover { background: var(--neon-naranja); color: black; box-shadow: 0 0 15px var(--neon-naranja); }
-.logo { padding: 20px; font-size: 1.5rem; text-align: center; border-bottom: 2px solid var(--neon-naranja); cursor: pointer; color: white; flex-shrink: 0; }
-.logo:hover { text-shadow: 2px 2px 0 var(--neon-rojo); }
-.zona-buscar { padding: 15px; border-bottom: 1px solid var(--borde-suave); background: #0a0a0a; flex-shrink: 0; }
-.buscador { width: 100%; padding: 10px; background: var(--fondo-input); border: 1px solid var(--borde-suave); color: white; outline: none; border-radius: 4px; }
-.buscador:focus { border-color: var(--neon-azul); }
-=======
 /* =========================================
-   4. MENÚ LATERAL (FONDO IMAGEN + TRANSPARENCIAS)
+   4. MENÚ LATERAL
    ========================================= */
 .menu { 
-    background-color: #111; /* Fondo base */
-    /* Borde derecho dinámico */
-    border-right: 2px solid var(--color-tema-actual);
+    background-color: #111; 
+    border-right: 2px solid var(--color-tema-actual); 
     position: relative; 
     z-index: 100; 
     display: flex; 
     flex-direction: column; 
     height: 100vh; 
-    overflow: visible; /* Para que el botón toggle salga */
+    /* IMPORTANTE: overflow visible en el padre para el botón */
+    overflow: visible; 
     transition: border-color 0.3s ease;
+    /* Asegura que el ancho se ajuste al grid track */
+    width: 100%; 
 }
->>>>>>> b7109d2ca50eae874ec2f5365cff4bff3647c38f
 
-/* Capa de la imagen de fondo con opacidad */
+/* Fondo del menú */
 .menu::before {
     content: "";
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    /* Ruta de tu imagen de fondo */
     background-image: url('img/fondomenu.jpg');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
-    opacity: 0.35; /* Ajuste de transparencia */
-    filter: blur(3px) grayscale(20%); /* Efecto visual */
+    opacity: 0.35; 
+    filter: blur(3px) grayscale(20%);
     z-index: -1; 
 }
 
+/* CONTENEDOR INTERNO DEL MENÚ (CORREGIDO PARA ENCOGERSE) */
 .menu-contenido { 
-    display: flex; flex-direction: column; height: 100%; 
-    min-width: 280px; /* Mantiene ancho interno fijo durante la animación */
-    overflow: hidden; 
-}
-/* Al colapsar, desactivamos clics pero dejamos que se vea mientras cierra */
-.contenedor.colapsado .menu-contenido { pointer-events: none; }
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
+    
+    /* CAMBIO CLAVE: Ancho 100% del padre (que se encoge por el grid) */
+    width: 100%; 
+    
+    /* CAMBIO CLAVE: Ocultar lo que no quepa mientras se encoge */
+    overflow: hidden;
+    
+    /* CAMBIO CLAVE: Evitar que el texto salte de línea al comprimirse */
+    white-space: nowrap;
 
-.lista { 
-    flex-grow: 1; overflow-y: auto; min-height: 0; padding-bottom: 20px; 
+    /* Hemos eliminado min-width y clip-path */
 }
 
-/* Botón Toggle (Flecha) Dinámico */
+.lista { flex-grow: 1; overflow-y: auto; min-height: 0; padding-bottom: 20px; }
+
+/* Botón Toggle (Flecha) */
 .btn-toggle { 
-    position: absolute; top: 50%; right: -24px; width: 24px; height: 60px; 
-    transform: translateY(-50%); 
+    position: absolute; top: 50%; right: -24px; 
+    width: 24px; height: 60px; transform: translateY(-50%); 
     background: #000; 
     border: 1px solid var(--color-tema-actual); 
     border-left: none; 
@@ -174,27 +160,36 @@ h1, h2, h3, h4, h5,
     cursor: pointer; z-index: 101; 
     display: flex; align-items: center; justify-content: center; 
     font-size: 1.2rem; 
-    transition: 0.3s; border-top-right-radius: 4px; border-bottom-right-radius: 4px; 
+    transition: 0.3s; 
+    border-top-right-radius: 4px; border-bottom-right-radius: 4px; 
+    /* Asegura que el botón no se aplaste */
+    flex-shrink: 0; 
 }
 .btn-toggle:hover { 
-    background: var(--color-tema-actual); color: black; box-shadow: 0 0 15px var(--color-tema-actual); 
+    background: var(--color-tema-actual); 
+    color: black; 
+    box-shadow: 0 0 15px var(--color-tema-actual); 
 }
 
-/* Logo (Header Opaco) */
+/* Logo / Encabezado */
 .logo { 
     padding: 20px; font-size: 1.5rem; text-align: center; 
     border-bottom: 2px solid var(--color-tema-actual); 
     cursor: pointer; color: white; flex-shrink: 0; 
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    background-color: #000000; /* Fondo negro sólido para tapar imagen */
+    background-color: #000000; 
     position: relative; z-index: 5;
-    white-space: nowrap;
+    /* Ya hereda white-space: nowrap de .menu-contenido, pero lo aseguramos */
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; /* Añade puntos suspensivos si quieres */
 }
 .logo:hover { text-shadow: 0 0 10px var(--color-tema-actual); }
 
-/* Buscador Semi-transparente */
+/* Buscador */
 .zona-buscar { 
-    padding: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    padding: 15px; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     background: rgba(0, 0, 0, 0.3); flex-shrink: 0; 
 }
 .buscador { 
@@ -203,7 +198,7 @@ h1, h2, h3, h4, h5,
 }
 .buscador:focus { border-color: var(--color-tema-actual); }
 
-/* Elementos del Menú (Efecto Cristal) */
+/* Items del Menú */
 .categoria { 
     padding: 15px; font-weight: bold; cursor: pointer; 
     border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
@@ -212,7 +207,7 @@ h1, h2, h3, h4, h5,
     color: var(--color-tema-actual); 
     font-size: 0.9rem; text-transform: uppercase; 
     backdrop-filter: blur(5px); margin-bottom: 2px;
-    white-space: nowrap;
+    white-space: nowrap; overflow: hidden;
 }
 .categoria:hover { background: rgba(255, 255, 255, 0.1) !important; color: white; }
 
@@ -224,7 +219,7 @@ h1, h2, h3, h4, h5,
     border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
     display: flex; justify-content: space-between; font-weight: bold; text-transform: uppercase; 
     background-color: rgba(60, 60, 60, 0.3) !important; backdrop-filter: blur(3px);
-    white-space: nowrap;
+    white-space: nowrap; overflow: hidden;
 }
 .grupo-titulo:hover { color: var(--color-tema-actual); background-color: rgba(255, 255, 255, 0.1) !important; }
 
@@ -233,7 +228,7 @@ h1, h2, h3, h4, h5,
     border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
     display: flex; justify-content: space-between; font-style: italic; 
     background-color: rgba(60, 60, 60, 0.2) !important;
-    white-space: nowrap;
+    white-space: nowrap; overflow: hidden;
 }
 .subgrupo-titulo:hover { color: var(--neon-verde); }
 
@@ -242,20 +237,37 @@ h1, h2, h3, h4, h5,
     border-bottom: 1px solid rgba(255, 255, 255, 0.05); cursor: pointer; color: #ddd; font-size: 0.85rem; 
     background-color: rgba(80, 80, 80, 0.15) !important; backdrop-filter: blur(2px); 
     border-left: 3px solid transparent;
-    white-space: nowrap;
+    white-space: nowrap; overflow: hidden;
 }
 .enlace:hover { 
     background: rgba(255, 255, 255, 0.15) !important; color: white; 
     border-left: 4px solid var(--color-tema-actual); padding-left: 46px; 
 }
-.miniatura { width: 28px; height: 28px; border-radius: 50%; margin-right: 10px; object-fit: cover; border: 1px solid #666; }
+.miniatura { width: 28px; height: 28px; border-radius: 50%; margin-right: 10px; object-fit: cover; border: 1px solid #666; flex-shrink: 0; }
 @keyframes fadeIn { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
 
 /* =========================================
-   5. CONTENIDO PRINCIPAL (HOME)
+   5. CONTENIDO PRINCIPAL
    ========================================= */
 .principal { overflow-y: auto; position: relative; display: flex; flex-direction: column; background-image: radial-gradient(circle at 50% 50%, #111 0%, #050505 80%); }
-.portada { background: linear-gradient(135deg, #1a1a1a, #4a0e0e); padding: 40px; min-height: 25vh; display: flex; align-items: center; border-bottom: 2px solid var(--neon-rojo); color: white; position: relative; box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
+
+/* REGLAS DEL BANNER */
+.portada { 
+    background: linear-gradient(135deg, #1a1a1a, #4a0e0e); 
+    padding: 40px; min-height: 25vh; display: flex; align-items: center; 
+    border-bottom: 2px solid var(--neon-rojo); color: white; position: relative; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5); 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Clase especial para Pochita (activada por JS) */
+.portada.modo-cover-total {
+    background-size: 100% auto !important; 
+    background-position: center 30% !important; 
+    background-color: #000;
+}
+
 .portada h1 { font-size: 2.5rem; margin-bottom: 10px; color: white; }
 .seccion-carrusel { padding: 20px 30px; border-bottom: 1px solid var(--borde-suave); }
 .titulo-seccion { margin-bottom: 20px; color: white; border-left: 5px solid var(--neon-verde); padding-left: 15px; font-size: 1.4rem; }
@@ -288,64 +300,17 @@ h1, h2, h3, h4, h5,
 .tarjeta-historia-link:hover { transform: scale(1.02); box-shadow: 0 0 20px var(--neon-verde); }
 
 /* =========================================
-   6. PERFIL DE PERSONAJE (BURBUJAS)
+   6. PERFIL (BURBUJAS)
    ========================================= */
 .perfil-grid { display: grid; grid-template-columns: 1fr 340px; gap: 40px; padding: 40px; }
 @media (max-width: 900px) { .perfil-grid { grid-template-columns: 1fr; } }
 .columna-info { display: flex; flex-direction: column; gap: 25px; }
 
-.tarjeta-info-expandible {
-    position: relative;
-    padding: 25px;
-    background: #111;
-    border: 1px solid #333;
-    display: flex;
-    flex-direction: column;
-}
-
-.contenido-truncado {
-    max-height: 160px; /* Límite fijo */
-    overflow: hidden;
-    position: relative;
-}
-
-<<<<<<< HEAD
-/* CORRECCIÓN CLAVE: Eliminar margen del último párrafo para evitar "falsos positivos" */
-.contenido-truncado p:last-child {
-    margin-bottom: 0;
-}
-
-/* El degradado SOLO aparece si añadimos la clase .con-overflow mediante JS */
-=======
-/* Evitar márgenes fantasma */
+.tarjeta-info-expandible { position: relative; padding: 25px; background: #111; border: 1px solid #333; display: flex; flex-direction: column; }
+.contenido-truncado { max-height: 160px; overflow: hidden; position: relative; }
 .contenido-truncado p:last-child { margin-bottom: 0; }
-
-/* Degradado solo si hay overflow */
->>>>>>> b7109d2ca50eae874ec2f5365cff4bff3647c38f
-.contenido-truncado.con-overflow::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 50px;
-    background: linear-gradient(to bottom, transparent, #111);
-    pointer-events: none;
-}
-
-/* Botón Ver Más */
-.btn-ver-mas {
-    display: none; /* Oculto por JS si no hace falta */
-    width: 100%;
-    margin-top: 15px;
-    background: #000;
-    border: 1px solid var(--color-tema-actual);
-    color: var(--color-tema-actual);
-    padding: 8px;
-    font-family: var(--fuente-titulo);
-    cursor: pointer;
-    text-align: center;
-    font-size: 0.8rem;
-    transition: 0.3s;
-}
+.contenido-truncado.con-overflow::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: linear-gradient(to bottom, transparent, #111); pointer-events: none; }
+.btn-ver-mas { display: none; width: 100%; margin-top: 15px; background: #000; border: 1px solid var(--color-tema-actual); color: var(--color-tema-actual); padding: 8px; font-family: var(--fuente-titulo); cursor: pointer; text-align: center; font-size: 0.8rem; transition: 0.3s; }
 .btn-ver-mas:hover { background: var(--color-tema-actual); color: black; box-shadow: 0 0 10px var(--color-tema-actual); }
 
 .foto-principal-marco { position: relative; border: 3px solid var(--color-tema-actual); cursor: pointer; overflow: hidden; box-shadow: 0 0 20px rgba(var(--color-tema-actual), 0.2); background: black; transition: 0.3s; margin-bottom: 20px; }
@@ -369,7 +334,7 @@ h1, h2, h3, h4, h5,
 .tarjeta-mini img { width: 60px; height: 60px; object-fit: cover; border: 1px solid #555; }
 
 /* =========================================
-   7. FANDOM & SPOILER
+   7. FANDOM
    ========================================= */
 .seccion-fandom { padding: 30px; background: #080808; border-top: 1px solid #333; padding-bottom: 100px; }
 .formulario-fandom { background: #111; padding: 20px; border: 1px solid #333; margin-bottom: 30px; }
@@ -386,7 +351,7 @@ h1, h2, h3, h4, h5,
 .spoiler-overlay.revelado { opacity: 0; pointer-events: none; }
 
 /* =========================================
-   8. MODAL UNIFICADO
+   8. MODAL
    ========================================= */
 .modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.95); display: none; justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(5px); }
 .modal.abierto { display: flex; }
