@@ -255,20 +255,6 @@ document.addEventListener('DOMContentLoaded', function() {
             impactoHistoria: "Desarrollo de Asa."
         },
         {
-            id: "zombie",
-            nombre: "Demonio Zombie",
-            colorTema: "--neon-verde",
-            temporada: ["Parte 1", "Demonio"],
-            desc: "Demonio esclavista.",
-            img: "img/zombie.jpg",
-            fotoGrande: "img/zombiegrande.jpg",
-            galeria: ["img/galeriazombie.jpg", "img/galeriazombie2.jpg", "img/galeriazombie3.jpg"],
-            historia: "<p>Engañó a la Yakuza y mató a Denji, causando el nacimiento de Chainsaw Man. Fue asesinado por Denji.</p>",
-            personalidad: "Cruel.",
-            ranking: "N/A",
-            impactoHistoria: "Origen de CSM."
-        },
-        {
             id: "barem",
             nombre: "Barem Bridge",
             colorTema: "--neon-naranja",
