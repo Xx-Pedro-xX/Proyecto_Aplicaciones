@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ==========================================
-    // 1. BASE DE DATOS (LORE CANÓNICO REVISADO)
+    // 1. BASE DE DATOS (TUS DATOS ORIGINALES INTACTOS)
     // ==========================================
     const datos = [
         {
@@ -143,6 +143,48 @@ document.addEventListener('DOMContentLoaded', function() {
             impactoHistoria: "Líder de la resistencia contra Makima."
         },
         {
+            id: "quanxi",
+            nombre: "Quanxi",
+            colorTema: "--neon-rosa",
+            temporada: ["Parte 1", "Híbrido",],
+            desc: "La primera Devil Hunter y Híbrida del Demonio Ballesta.",
+            img: "img/quanxi.jpg",
+            fotoGrande: "img/quanxigrande.jpg",
+            galeria: ["img/galeriaquanxi.jpg", "img/galeriaquanxi2.jpg", "img/galeriaquanxi3.jpg"],
+            historia: "<p>Quanxi es una antigua cazadora china y Híbrida del Demonio Ballesta. Llegó a Japón para capturar a Denji. Es increíblemente rápida y letal en combate cuerpo a cuerpo. Tiene una historia pasada con <a href='personaje.html?id=kishibe' class='link-interno'>Kishibe</a>.</p><p>Fue decapitada por <a href='personaje.html?id=makima' class='link-interno'>Makima</a> después de rendirse para pedir clemencia por sus amantes (fiends). Reaparece en la Parte 2 trabajando para Seguridad Pública.</p>",
+            personalidad: "Tranquila y hedonista.",
+            ranking: "#14 en la 3ra encuesta.",
+            impactoHistoria: "Muestra el nivel de poder global."
+        },
+        {
+            id: "kobeni",
+            nombre: "Kobeni Higashiyama",
+            colorTema: "--neon-naranja",
+            temporada: ["Parte 1", "Devil Hunter", "Seguridad Pública"],
+            desc: "Cazadora con ansiedad extrema pero gran habilidad.",
+            img: "img/kobeni.jpg",
+            fotoGrande: "img/kobenigrande.jpg",
+            galeria: ["img/galeriakobeni.jpg", "img/galeriakobeni2.jpg", "img/galeriakobeni3.jpg"],
+            historia: "<p>Kobeni trabaja como Devil Hunter forzada por su familia. Sufre de pánico constante pero es extremadamente hábil en combate. Sobrevivió a los encuentros con el Demonio de la Eternidad, Katana Man y el Infierno.</p><p>Renunció a Seguridad Pública y terminó trabajando en una hamburguesería, donde fue 'secuestrada' por Chainsaw Man para una cita. Es una de las pocas supervivientes de la Parte 1.</p>",
+            personalidad: "Ansiosa y desafortunada.",
+            ranking: "#13 en la 3ra encuesta.",
+            impactoHistoria: "Superviviente improbable."
+        },
+        {
+            id: "santa",
+            nombre: "Santa Claus",
+            colorTema: "--neon-gris",
+            temporada: ["Parte 1", "Humano", "Contratista"],
+            desc: "Asesina alemana contratista del Demonio Muñeca.",
+            img: "img/santa.jpg",
+            fotoGrande: "img/santagrande.jpg",
+            galeria: ["img/galeriasanta.jpg", "img/galeriasanta2.jpg", "img/galeriasanta3.jpg"],
+            historia: "<p>Santa Claus es una mente colmena controlada por una mujer llamada 'Maestra'. Tiene un contrato con el Demonio Muñeca. Hizo un trato con el Demonio de la Oscuridad para matar a <a href='personaje.html?id=makima' class='link-interno'>Makima</a>, entregándole a cambio el corazón de Denji (enviando a todos al Infierno).</p><p>Fue derrotada por una estrategia combinada de Denji (que se prendió fuego para anular sus poderes en la oscuridad) y el ataque mental de Cosmo.</p>",
+            personalidad: "Siniestra y calculadora.",
+            ranking: "N/A",
+            impactoHistoria: "Provocó el viaje al Infierno."
+        },
+        {
             id: "asa",
             nombre: "Asa Mitaka",
             colorTema: "--neon-verde",
@@ -211,6 +253,118 @@ document.addEventListener('DOMContentLoaded', function() {
             personalidad: "Justiciera extrema.",
             ranking: "#54 en la 3ra encuesta.",
             impactoHistoria: "Desarrollo de Asa."
+        },
+        {
+            id: "zombie",
+            nombre: "Demonio Zombie",
+            colorTema: "--neon-verde",
+            temporada: ["Parte 1", "Demonio"],
+            desc: "Demonio esclavista.",
+            img: "img/zombie.jpg",
+            fotoGrande: "img/zombiegrande.jpg",
+            galeria: ["img/galeriazombie.jpg", "img/galeriazombie2.jpg", "img/galeriazombie3.jpg"],
+            historia: "<p>Engañó a la Yakuza y mató a Denji, causando el nacimiento de Chainsaw Man. Fue asesinado por Denji.</p>",
+            personalidad: "Cruel.",
+            ranking: "N/A",
+            impactoHistoria: "Origen de CSM."
+        },
+        {
+            id: "barem",
+            nombre: "Barem Bridge",
+            colorTema: "--neon-naranja",
+            temporada: ["Parte 1", "Híbrido", "Parte 2"],
+            desc: "Híbrido del Lanzallamas y fanático de Makima.",
+            img: "img/barem.jpg",
+            fotoGrande: "img/baremgrande.jpg",
+            galeria: ["img/galeriabarem.jpg", "img/galeriabarem2.jpg"],
+            historia: "<p>Barem es un Híbrido que servía a Makima. En la Parte 2, lidera la Iglesia bajo órdenes de Fami. Quemó la casa y las mascotas de Denji para obligarlo a pelear.</p>",
+            personalidad: "Sádico y tranquilo.",
+            ranking: "N/A",
+            impactoHistoria: "Villano ejecutor en Parte 2."
+        },
+        {
+            id: "yoshida",
+            nombre: "Hirofumi Yoshida",
+            colorTema: "--neon-amarillo",
+            temporada: ["Parte 1", "Parte 2", "Devil Hunter"],
+            desc: "Cazador privado que vigila a Denji.",
+            img: "img/yoshida.jpg",
+            fotoGrande: "img/yoshidagrande.jpg",
+            galeria: ["img/galeriayoshida.jpg", "img/galeriayoshida2.jpg", "img/galeriayoshida3.jpg"],
+            historia: "<p>Cazador de élite con contrato del Pulpo. Protegió a Denji en la Parte 1. En la Parte 2, trabaja para una organización secreta vigilando que Denji no se transforme.</p>",
+            personalidad: "Enigmático.",
+            ranking: "#8 en la 3ra encuesta.",
+            impactoHistoria: "Vigilante de Denji."
+        },
+        {
+            id: "beam",
+            nombre: "Beam",
+            colorTema: "--neon-cyan",
+            temporada: ["Parte 1", "Poseído", "Seguridad Pública"],
+            desc: "El Poseído Tiburón.",
+            img: "img/beam.jpg",
+            fotoGrande: "img/beamgrande.jpg",
+            galeria: ["img/galeriabeam.jpg", "img/galeriabeam2.jpg", "img/galeriabeam3.jpg", "img/galeriabeam4.jpg"],
+            historia: "<p>Devoto seguidor de Chainsaw Man. Ayudó a Denji contra Reze. Murió en el infierno asesinado por el Demonio de la Oscuridad.</p>",
+            personalidad: "Fanático y leal.",
+            ranking: "#7 en la 3ra encuesta.",
+            impactoHistoria: "Apoyo leal."
+        },
+        {
+            id: "angel",
+            nombre: "Ángel",
+            colorTema: "--neon-blanco",
+            temporada: ["Parte 1", "Demonio", "Seguridad Pública"],
+            desc: "El Demonio Ángel.",
+            img: "img/angel.jpg",
+            fotoGrande: "img/angelgrande.jpg",
+            galeria: ["img/galeriaangel.jpg", "img/galeriaangel2.jpg", "img/galeriaangel3.jpg"],
+            historia: "<p>Demonio que absorbe vida. Amigo de Aki. Fue manipulado por Makima para matar a su pueblo. Murió (presumiblemente) bajo el control de Makima en la batalla final.</p>",
+            personalidad: "Perezoso.",
+            ranking: "#6 en la 3ra encuesta.",
+            impactoHistoria: "Amigo de Aki."
+        },
+        {
+            id: "galgali",
+            nombre: "Galgali (Violencia)",
+            colorTema: "--neon-rojo",
+            temporada: ["Parte 1", "Poseído", "Seguridad Pública"],
+            desc: "El Poseído de la Violencia.",
+            img: "img/galgali.jpg",
+            fotoGrande: "img/galgaligrande.jpg",
+            galeria: ["img/galeriagalgali.jpg", "img/galeriagalgali2.jpg", "img/galeriagalgali3.jpg"],
+            historia: "<p>Poseído extremadamente fuerte pero pacifista. Compañero de Kobeni. Murió luchando contra el Demonio de la Oscuridad para protegerla.</p>",
+            personalidad: "Educado.",
+            ranking: "#17 en la 3ra encuesta.",
+            impactoHistoria: "Protector de Kobeni."
+        },
+        {
+            id: "oscuridad",
+            nombre: "Demonio de la Oscuridad",
+            colorTema: "--neon-morado",
+            temporada: ["Parte 1", "Demonio"],
+            desc: "Demonio Primordial.",
+            img: "img/oscuridad.jpg",
+            fotoGrande: "img/oscuridadgrande.jpg",
+            galeria: ["img/galeriaoscuridad.jpg", "img/galeriaoscuridad2.jpg", "img/galeriaoscuridad3.jpg", "img/galeriaoscuridad4.jpg"],
+            historia: "<p>Demonio Primordial que nunca ha muerto. Apareció en el Infierno y masacró a los cazadores. Solo Makima pudo escapar de él.</p>",
+            personalidad: "Aterrador.",
+            ranking: "#35 en la 3ra encuesta.",
+            impactoHistoria: "Escala de poder absoluta."
+        },
+        {
+            id: "caida",
+            nombre: "Demonio de la Caída",
+            colorTema: "--neon-morado",
+            temporada: ["Parte 2", "Demonio",],
+            desc: "Chef del Infierno y Miedo Primordial.",
+            img: "img/caida.jpg",
+            fotoGrande: "img/caidagrande.jpg",
+            galeria: ["img/galeriacaida.jpg", "img/galeriacaida2.jpg", "img/galeriacaida3.jpg"],
+            historia: "<p>El Demonio de la Caída es un <strong>Miedo Primordial</strong> (aquellos que nunca han muerto) que encarna el terror a la caída, tanto física como emocional. Apareció en la Tierra con el objetivo de cocinar a <a href='personaje.html?id=asa' class='link-interno'>Asa Mitaka</a> y <a href='personaje.html?id=yoru' class='link-interno'>Yoru</a> para servirlas como plato principal a los residentes del Infierno.</p><p>Su habilidad principal manipula la gravedad basándose en los traumas: cuanto más bajo cae el ánimo de una persona recordando su pasado, más alto 'cae' hacia el cielo, siendo enviada a las puertas del Infierno. Esto causó destrucción global y suicidios masivos.</p><p>Se enfrentó a Chainsaw Man, regenerándose instantáneamente de cualquier ataque y descuartizándolo repetidamente. Sin embargo, Denji logró sobrevivir 'dejando de pensar' para no tener traumas. Finalmente se reveló que estaba trabajando bajo las órdenes de <a href='personaje.html?id=morti' class='link-interno'>Fami (Kiga)</a> para matar de hambre a Yoru y controlarla. Se retiró tras fracasar en servir el plato.</p>",
+            personalidad: "Cortés, obsesionada con la cocina y sádica.",
+            ranking: "N/A (Miedo Primordial).",
+            impactoHistoria: "Primera aparición de un Primordial en la Tierra."
         },
     ];
 
@@ -328,7 +482,59 @@ document.addEventListener('DOMContentLoaded', function() {
     renderizarMenu();
 
     // ==========================================
-    // 3. PERFIL & RENDERIZADO INTELIGENTE
+    // 3. LOGICA CONTENT.HTML (CARRUSEL ARCOS Y SCROLL FIX)
+    // ==========================================
+    const trackArcos = document.getElementById('carrusel-arcos-track');
+    
+    // Función global para la navegación suave en Content.html
+    window.navegarArco = (id) => {
+        const elemento = document.getElementById(id);
+        if(elemento) {
+            // Esto fuerza el scroll dentro del contenedor correcto (.principal)
+            elemento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Efecto visual opcional
+            elemento.style.transition = "color 0.3s";
+            let colorOriginal = elemento.style.color;
+            elemento.style.color = "#fff";
+            setTimeout(() => { elemento.style.color = colorOriginal || "var(--neon-naranja)"; }, 500);
+        }
+    };
+
+    if (trackArcos) {
+        // Datos de arcos usando imágenes de la base de datos para no cargar nuevas
+        const arcos = [
+            { id: "arco-1", titulo: "1. Zombies", img: "img/denji.jpg" },
+            { id: "arco-2", titulo: "2. Eternidad", img: "img/power.jpg" },
+            { id: "arco-3", titulo: "3. Katana Man", img: "img/katanaman.jpg" },
+            { id: "arco-4", titulo: "4. Reze", img: "img/reze.jpg" },
+            { id: "arco-5", titulo: "5. Asesinos", img: "img/oscuridad.jpg" },
+            { id: "arco-6", titulo: "6. Pistola", img: "img/aki.jpg" },
+            { id: "arco-7", titulo: "7. Control", img: "img/makima.jpg" },
+            { id: "arco-8", titulo: "8. Guerra", img: "img/asa.jpg" },
+            { id: "arco-9", titulo: "9. Caída", img: "img/caida.jpg" },
+            { id: "arco-10", titulo: "10. Iglesia", img: "img/barem.jpg" }, // Barem representa la iglesia (asegúrate de que existe en datos si usas su img, sino usa placeholder)
+            { id: "arco-11", titulo: "11. Pochita Negro", img: "img/pochita.jpg" },
+            { id: "arco-12", titulo: "12. Actualidad", img: "img/yoru.jpg" }
+        ];
+
+        // Renderizado con div y evento onclick para asegurar el scroll correcto
+        trackArcos.innerHTML = arcos.map(arco => `
+            <div class="tarjeta-arco" onclick="navegarArco('${arco.id}')">
+                <img src="${arco.img}" onerror="this.src='https://placehold.co/200x120/111/FFF?text=CSM'">
+                <span>${arco.titulo}</span>
+            </div>
+        `).join('');
+
+        // Scroll horizontal con rueda del ratón
+        trackArcos.addEventListener('wheel', (evt) => {
+            evt.preventDefault();
+            trackArcos.scrollLeft += evt.deltaY;
+        });
+    }
+
+    // ==========================================
+    // 4. PERFIL & RENDERIZADO INTELIGENTE
     // ==========================================
     const elNombre = document.getElementById('p-nombre');
     if (elNombre) { 
@@ -343,13 +549,18 @@ document.addEventListener('DOMContentLoaded', function() {
             document.title = `${p.nombre} | CSM DB`;
             const elFoto = document.getElementById('p-foto');
             if(elFoto) elFoto.src = p.fotoGrande;
+            
             const header = document.getElementById('header-portada');
-            if(header && p.banner) {
-                header.style.backgroundImage = `url('${p.banner}')`;
-                if(p.bannerPos) header.style.backgroundPosition = p.bannerPos;
+            if(header) {
+                header.classList.remove('modo-cover-total');
+                if(p.banner) {
+                    header.style.backgroundImage = `url('${p.banner}')`;
+                    if(p.bannerPos) header.style.backgroundPosition = p.bannerPos;
+                    else header.style.backgroundPosition = 'center';
+                    if (p.id === 'pochita') header.classList.add('modo-cover-total');
+                } else { header.style.backgroundImage = 'none'; }
             }
 
-            // --- RENDERIZADO DE TARJETAS ---
             const contenedorInfo = document.getElementById('contenedor-dinamico');
             if(contenedorInfo) {
                 const campos = [
@@ -372,11 +583,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>`;
                 }).join('');
 
-                // VERIFICACIÓN DE DESBORDAMIENTO (Tolerancia +1px)
                 document.querySelectorAll('.tarjeta-info-expandible').forEach(card => {
                     const textoDiv = card.querySelector('.contenido-truncado');
                     const boton = card.querySelector('.btn-ver-mas');
-                    
                     if(textoDiv.scrollHeight > textoDiv.clientHeight + 1) {
                         boton.style.display = 'block'; 
                         textoDiv.classList.add('con-overflow'); 
@@ -410,6 +619,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else { elNombre.innerText = "AGENTE NO ENCONTRADO"; }
     }
 
+    // ==========================================
+    // 5. INDEX Y CARRUSEL PRINCIPAL
+    // ==========================================
     const carruselTrack = document.getElementById('carrusel-track');
     const contenedorNoticias = document.getElementById('contenedor-noticias');
     if (carruselTrack) {
@@ -425,7 +637,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ==========================================
-    // 5. FANDOM
+    // 6. FANDOM
     // ==========================================
     const muroFandom = document.getElementById('muro-fandom');
     const btnPublicar = document.getElementById('btn-publicar');
@@ -443,17 +655,9 @@ document.addEventListener('DOMContentLoaded', function() {
             muroFandom.innerHTML = posts.map((post, i) => `
                 <div class="post-fandom">
                     <button class="btn-borrar" onclick="borrarPost(${i})">BORRAR</button>
-                    ${post.spoiler ? `
-                        <div class="spoiler-overlay" onclick="this.classList.add('revelado')">
-                            <span style="color:var(--neon-rojo); font-size:1.5rem; font-weight:bold; font-family:var(--fuente-titulo);">⚠️ SPOILER</span>
-                            <small style="color:white; margin-top:5px;">Clic para revelar</small>
-                        </div>
-                    ` : ''}
+                    ${post.spoiler ? `<div class="spoiler-overlay" onclick="this.classList.add('revelado')"><span style="color:var(--neon-rojo); font-size:1.5rem; font-weight:bold; font-family:var(--fuente-titulo);">⚠️ SPOILER</span><small style="color:white; margin-top:5px;">Clic para revelar</small></div>` : ''}
                     ${post.img ? `<div class="post-img-contenedor"><img src="${post.img}" class="post-img" onclick="abrirModal(['${post.img}'])"></div>` : ''}
-                    <div style="padding:15px; color:#ccc;">
-                        <p>${post.texto}</p>
-                        <small style="color:#555;">${post.fecha}</small>
-                    </div>
+                    <div style="padding:15px; color:#ccc;"><p>${post.texto}</p><small style="color:#555;">${post.fecha}</small></div>
                 </div>
             `).join('');
         }
@@ -477,27 +681,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ==========================================
-    // 6. MODAL UNIFICADO
+    // 7. MODAL UNIFICADO
     // ==========================================
     const modal = document.getElementById('mi-modal');
     const imgModal = document.getElementById('img-modal');
     const textoModalTitulo = document.getElementById('modal-titulo-texto');
     const textoModalCuerpo = document.getElementById('modal-cuerpo-texto');
-    
     const btnCerrar = document.getElementById('btn-cerrar');
     const btnAnt = document.getElementById('btn-anterior');
     const btnSig = document.getElementById('btn-siguiente');
-    
     let galeriaActual = []; let indiceActual = 0;
 
     window.abrirModal = (imagenes) => { 
         if(!modal || !imgModal) return; 
-        galeriaActual = imagenes; 
-        indiceActual = 0; 
-        
-        modal.classList.remove('modo-texto');
-        modal.classList.add('modo-imagen'); 
-        modal.classList.add('abierto');
+        galeriaActual = imagenes; indiceActual = 0; 
+        modal.classList.remove('modo-texto'); modal.classList.add('modo-imagen'); modal.classList.add('abierto');
         actualizarModalImagen(); 
     };
 
@@ -505,11 +703,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(!modal) return;
         const p = datos.find(d => d.id === idPersonaje);
         if(!p) return;
-
-        modal.classList.remove('modo-imagen');
-        modal.classList.add('modo-texto'); 
-        modal.classList.add('abierto');
-
+        modal.classList.remove('modo-imagen'); modal.classList.add('modo-texto'); modal.classList.add('abierto');
         if(textoModalTitulo) textoModalTitulo.innerText = titulo;
         if(textoModalCuerpo) {
             const contenido = p[keyCampo];

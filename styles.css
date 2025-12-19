@@ -1,5 +1,5 @@
 /* =========================================
-   1. FUENTES Y VARIABLES GLOBALES
+   1. FUENTES, VARIABLES Y CONFIGURACIÓN BASE
    ========================================= */
 @font-face {
     font-family: 'WildWords';
@@ -25,13 +25,12 @@
     --fuente-titulo: 'WildWords', 'Impact', 'Arial Black', sans-serif;
     --fuente-cuerpo: 'Segoe UI', system-ui, sans-serif;
 
-    /* Variable Dinámica */
+    /* Variable Dinámica (Cambia con JS) */
     --color-tema-actual: var(--neon-azul);
 }
 
-/* =========================================
-   2. RESET Y BASES
-   ========================================= */
+html { scroll-behavior: smooth; }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
@@ -55,7 +54,7 @@ p { line-height: 1.6; margin-bottom: 15px; color: #ccc; }
 
 /* Tipografía */
 h1, h2, h3, h4, h5, 
-.logo, .dato-titulo, .badge, .etiqueta-roja, .boton-publicar, #p-nombre, .titulo-seccion {
+.logo, .dato-titulo, .badge, .etiqueta-roja, .boton-publicar, #p-nombre, .titulo-seccion, .titulo-parte {
     font-family: var(--fuente-titulo);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -83,12 +82,13 @@ h1, h2, h3, h4, h5,
     border-bottom-style: solid;
 }
 
+.highlight { color: white; font-weight: bold; }
+
 /* =========================================
-   3. LAYOUT PRINCIPAL (ANIMACIÓN GRID)
+   2. LAYOUT PRINCIPAL
    ========================================= */
 .contenedor {
     display: grid;
-    /* La transición de esta propiedad es la que impulsa toda la animación */
     grid-template-columns: 280px 1fr;
     height: 100vh;
     width: 100%;
@@ -98,7 +98,7 @@ h1, h2, h3, h4, h5,
 .contenedor.colapsado { grid-template-columns: 0px 1fr; }
 
 /* =========================================
-   4. MENÚ LATERAL
+   3. MENÚ LATERAL
    ========================================= */
 .menu { 
     background-color: #111; 
@@ -108,14 +108,11 @@ h1, h2, h3, h4, h5,
     display: flex; 
     flex-direction: column; 
     height: 100vh; 
-    /* IMPORTANTE: overflow visible en el padre para el botón */
     overflow: visible; 
     transition: border-color 0.3s ease;
-    /* Asegura que el ancho se ajuste al grid track */
     width: 100%; 
 }
 
-/* Fondo del menú */
 .menu::before {
     content: "";
     position: absolute;
@@ -129,27 +126,17 @@ h1, h2, h3, h4, h5,
     z-index: -1; 
 }
 
-/* CONTENEDOR INTERNO DEL MENÚ (CORREGIDO PARA ENCOGERSE) */
 .menu-contenido { 
-    display: flex; 
-    flex-direction: column; 
-    height: 100%; 
-    
-    /* CAMBIO CLAVE: Ancho 100% del padre (que se encoge por el grid) */
+    display: flex; flex-direction: column; height: 100%; 
     width: 100%; 
-    
-    /* CAMBIO CLAVE: Ocultar lo que no quepa mientras se encoge */
-    overflow: hidden;
-    
-    /* CAMBIO CLAVE: Evitar que el texto salte de línea al comprimirse */
+    overflow: hidden; 
     white-space: nowrap;
-
-    /* Hemos eliminado min-width y clip-path */
+    min-width: 0; 
 }
 
 .lista { flex-grow: 1; overflow-y: auto; min-height: 0; padding-bottom: 20px; }
 
-/* Botón Toggle (Flecha) */
+/* Botón Toggle */
 .btn-toggle { 
     position: absolute; top: 50%; right: -24px; 
     width: 24px; height: 60px; transform: translateY(-50%); 
@@ -162,16 +149,11 @@ h1, h2, h3, h4, h5,
     font-size: 1.2rem; 
     transition: 0.3s; 
     border-top-right-radius: 4px; border-bottom-right-radius: 4px; 
-    /* Asegura que el botón no se aplaste */
     flex-shrink: 0; 
 }
-.btn-toggle:hover { 
-    background: var(--color-tema-actual); 
-    color: black; 
-    box-shadow: 0 0 15px var(--color-tema-actual); 
-}
+.btn-toggle:hover { background: var(--color-tema-actual); color: black; box-shadow: 0 0 15px var(--color-tema-actual); }
 
-/* Logo / Encabezado */
+/* Logo */
 .logo { 
     padding: 20px; font-size: 1.5rem; text-align: center; 
     border-bottom: 2px solid var(--color-tema-actual); 
@@ -179,17 +161,13 @@ h1, h2, h3, h4, h5,
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     background-color: #000000; 
     position: relative; z-index: 5;
-    /* Ya hereda white-space: nowrap de .menu-contenido, pero lo aseguramos */
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis; /* Añade puntos suspensivos si quieres */
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .logo:hover { text-shadow: 0 0 10px var(--color-tema-actual); }
 
 /* Buscador */
 .zona-buscar { 
-    padding: 15px; 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    padding: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     background: rgba(0, 0, 0, 0.3); flex-shrink: 0; 
 }
 .buscador { 
@@ -198,7 +176,7 @@ h1, h2, h3, h4, h5,
 }
 .buscador:focus { border-color: var(--color-tema-actual); }
 
-/* Items del Menú */
+/* Elementos Lista */
 .categoria { 
     padding: 15px; font-weight: bold; cursor: pointer; 
     border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
@@ -214,21 +192,21 @@ h1, h2, h3, h4, h5,
 .sub-menu { display: none; background: rgba(0, 0, 0, 0.2); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
 .sub-menu.mostrar { display: block; animation: fadeIn 0.3s; }
 
-.grupo-titulo { 
-    padding: 10px 15px 10px 25px; cursor: pointer; font-size: 0.8rem; color: #bbb; 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
-    display: flex; justify-content: space-between; font-weight: bold; text-transform: uppercase; 
-    background-color: rgba(60, 60, 60, 0.3) !important; backdrop-filter: blur(3px);
+.grupo-titulo, .subgrupo-titulo { 
+    cursor: pointer; display: flex; justify-content: space-between; 
     white-space: nowrap; overflow: hidden;
+}
+.grupo-titulo { 
+    padding: 10px 15px 10px 25px; font-size: 0.8rem; color: #bbb; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); font-weight: bold; text-transform: uppercase; 
+    background-color: rgba(60, 60, 60, 0.3) !important; backdrop-filter: blur(3px);
 }
 .grupo-titulo:hover { color: var(--color-tema-actual); background-color: rgba(255, 255, 255, 0.1) !important; }
 
 .subgrupo-titulo { 
-    padding: 8px 15px 8px 40px; cursor: pointer; font-size: 0.75rem; color: #999; 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
-    display: flex; justify-content: space-between; font-style: italic; 
+    padding: 8px 15px 8px 40px; font-size: 0.75rem; color: #999; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); font-style: italic; 
     background-color: rgba(60, 60, 60, 0.2) !important;
-    white-space: nowrap; overflow: hidden;
 }
 .subgrupo-titulo:hover { color: var(--neon-verde); }
 
@@ -236,39 +214,89 @@ h1, h2, h3, h4, h5,
     display: flex; align-items: center; padding: 8px 15px 8px 50px; 
     border-bottom: 1px solid rgba(255, 255, 255, 0.05); cursor: pointer; color: #ddd; font-size: 0.85rem; 
     background-color: rgba(80, 80, 80, 0.15) !important; backdrop-filter: blur(2px); 
-    border-left: 3px solid transparent;
-    white-space: nowrap; overflow: hidden;
+    border-left: 3px solid transparent; white-space: nowrap; overflow: hidden;
 }
-.enlace:hover { 
-    background: rgba(255, 255, 255, 0.15) !important; color: white; 
-    border-left: 4px solid var(--color-tema-actual); padding-left: 46px; 
-}
+.enlace:hover { background: rgba(255, 255, 255, 0.15) !important; color: white; border-left: 4px solid var(--color-tema-actual); padding-left: 46px; }
 .miniatura { width: 28px; height: 28px; border-radius: 50%; margin-right: 10px; object-fit: cover; border: 1px solid #666; flex-shrink: 0; }
 @keyframes fadeIn { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
 
 /* =========================================
-   5. CONTENIDO PRINCIPAL
+   4. ESTILOS DE CONTENT.HTML (WIKI)
+   ========================================= */
+.portada-wiki {
+    min-height: 25vh; 
+    justify-content: center; 
+    background-image: url('img/fondo_historia.jpg'); 
+    background-size: cover; 
+    background-position: center;
+}
+.texto-portada-wiki {
+    text-align: center; text-shadow: 0 0 20px black;
+}
+.texto-portada-wiki h1 { margin: 0; font-size: 3rem; color: white; }
+.texto-portada-wiki p { margin: 0; color: var(--neon-azul); font-weight: bold; }
+
+/* Carrusel de Arcos (Navegación) */
+.nav-arcos-container {
+    padding: 20px 40px;
+    background: rgba(5, 5, 5, 0.95);
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    backdrop-filter: blur(10px);
+}
+.nav-arcos-titulo {
+    color: #666; font-size: 0.8rem; margin-bottom: 10px; text-transform: uppercase;
+}
+.carrusel-arcos-track {
+    display: flex; gap: 15px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 10px; scrollbar-width: none;
+}
+.carrusel-arcos-track::-webkit-scrollbar { display: none; }
+
+.tarjeta-arco {
+    min-width: 200px; height: 120px; border-radius: 8px; position: relative; overflow: hidden; cursor: pointer; border: 1px solid #333; transition: 0.3s; flex-shrink: 0;
+}
+.tarjeta-arco:hover { border-color: var(--neon-naranja); transform: scale(1.05); }
+.tarjeta-arco img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.5); transition: 0.3s; }
+.tarjeta-arco:hover img { filter: brightness(0.8); }
+.tarjeta-arco span {
+    position: absolute; bottom: 10px; left: 10px; right: 10px; color: white; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; text-shadow: 0 2px 4px black; pointer-events: none;
+}
+
+/* Cuerpo de la Wiki */
+.contenido-wiki { 
+    max-width: 900px; margin: 0 auto 60px auto; background: #0a0a0a; padding: 40px; 
+}
+.titulo-parte {
+    color: var(--neon-azul); font-size: 2.5rem; text-align: left; margin: 60px 0 30px 0; border-bottom: 3px solid var(--neon-azul); padding-bottom: 10px;
+}
+.contenido-wiki h2 { 
+    color: var(--neon-naranja); margin-top: 60px; margin-bottom: 20px; font-size: 1.8rem; scroll-margin-top: 200px; /* Offset para el header sticky */
+}
+.contenido-wiki p { color: #ddd; font-size: 1.1rem; text-align: left; margin-bottom: 20px; }
+.separador-final { text-align: center; color: #444; margin: 40px 0; font-size: 1.5rem; }
+
+/* Responsive Wiki */
+@media (max-width: 768px) {
+    .nav-arcos-container { padding: 15px; }
+    .tarjeta-arco { min-width: 160px; height: 100px; }
+    .titulo-parte { font-size: 1.8rem; }
+    .contenido-wiki { padding: 20px; }
+    .texto-portada-wiki h1 { font-size: 2rem; }
+}
+
+/* =========================================
+   5. CONTENIDO COMÚN (HOME Y PERFIL)
    ========================================= */
 .principal { overflow-y: auto; position: relative; display: flex; flex-direction: column; background-image: radial-gradient(circle at 50% 50%, #111 0%, #050505 80%); }
 
-/* REGLAS DEL BANNER */
 .portada { 
-    background: linear-gradient(135deg, #1a1a1a, #4a0e0e); 
-    padding: 40px; min-height: 25vh; display: flex; align-items: center; 
-    border-bottom: 2px solid var(--neon-rojo); color: white; position: relative; 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5); 
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #1a1a1a, #4a0e0e); padding: 40px; min-height: 25vh; display: flex; align-items: center; border-bottom: 2px solid var(--neon-rojo); color: white; position: relative; box-shadow: 0 5px 20px rgba(0,0,0,0.5); background-position: center; background-repeat: no-repeat; 
 }
-
-/* Clase especial para Pochita (activada por JS) */
-.portada.modo-cover-total {
-    background-size: 100% auto !important; 
-    background-position: center 30% !important; 
-    background-color: #000;
-}
-
+.portada.modo-cover-total { background-size: 100% auto !important; background-position: center 30% !important; background-color: #000; }
 .portada h1 { font-size: 2.5rem; margin-bottom: 10px; color: white; }
+
 .seccion-carrusel { padding: 20px 30px; border-bottom: 1px solid var(--borde-suave); }
 .titulo-seccion { margin-bottom: 20px; color: white; border-left: 5px solid var(--neon-verde); padding-left: 15px; font-size: 1.4rem; }
 .carrusel-mascara { width: 100%; overflow: hidden; padding: 10px 0; position: relative; }
@@ -299,33 +327,27 @@ h1, h2, h3, h4, h5,
 .tarjeta-historia-link h3 { z-index: 2; position: relative; }
 .tarjeta-historia-link:hover { transform: scale(1.02); box-shadow: 0 0 20px var(--neon-verde); }
 
-/* =========================================
-   6. PERFIL (BURBUJAS)
-   ========================================= */
+/* Perfil (Burbujas) */
 .perfil-grid { display: grid; grid-template-columns: 1fr 340px; gap: 40px; padding: 40px; }
 @media (max-width: 900px) { .perfil-grid { grid-template-columns: 1fr; } }
 .columna-info { display: flex; flex-direction: column; gap: 25px; }
-
 .tarjeta-info-expandible { position: relative; padding: 25px; background: #111; border: 1px solid #333; display: flex; flex-direction: column; }
 .contenido-truncado { max-height: 160px; overflow: hidden; position: relative; }
 .contenido-truncado p:last-child { margin-bottom: 0; }
 .contenido-truncado.con-overflow::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: linear-gradient(to bottom, transparent, #111); pointer-events: none; }
 .btn-ver-mas { display: none; width: 100%; margin-top: 15px; background: #000; border: 1px solid var(--color-tema-actual); color: var(--color-tema-actual); padding: 8px; font-family: var(--fuente-titulo); cursor: pointer; text-align: center; font-size: 0.8rem; transition: 0.3s; }
 .btn-ver-mas:hover { background: var(--color-tema-actual); color: black; box-shadow: 0 0 10px var(--color-tema-actual); }
-
 .foto-principal-marco { position: relative; border: 3px solid var(--color-tema-actual); cursor: pointer; overflow: hidden; box-shadow: 0 0 20px rgba(var(--color-tema-actual), 0.2); background: black; transition: 0.3s; margin-bottom: 20px; }
 .foto-principal { width: 100%; display: block; transition: transform 0.5s; }
 .foto-principal-marco:hover .foto-principal { transform: scale(1.1); }
 .etiqueta-hover { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); color: var(--color-tema-actual); text-align: center; padding: 10px; font-weight: bold; opacity: 0; transition: opacity 0.3s; }
 .foto-principal-marco:hover .etiqueta-hover { opacity: 1; }
-
 .dato-titulo { font-size: 1rem; margin-bottom: 15px; opacity: 1; border-bottom: 1px solid #333; padding-bottom: 5px; }
 .tarjeta-ranking { border-left: 4px solid gold; }
 .tarjeta-historia { border-left: 4px solid var(--neon-azul); }
 .tarjeta-personalidad { border-left: 4px solid var(--neon-verde); }
 .tarjeta-impacto { border-left: 4px solid var(--neon-rojo); }
 .tarjeta-desc { border-left: 4px solid var(--neon-naranja); }
-
 .contenedor-carrusel-vertical { background: #080808; padding: 15px; border: 1px solid #333; }
 .carrusel-vertical-viewport { height: 400px; overflow: hidden; position: relative; background: #000; border-top: 1px solid #222; border-bottom: 1px solid #222; }
 .carrusel-vertical-track { display: flex; flex-direction: column; gap: 10px; padding: 10px 5px; transition: transform 0.1s ease-out; }
@@ -333,9 +355,7 @@ h1, h2, h3, h4, h5,
 .tarjeta-mini:hover { background: #1a1a1a; border-color: var(--color-tema-actual); transform: translateX(5px); }
 .tarjeta-mini img { width: 60px; height: 60px; object-fit: cover; border: 1px solid #555; }
 
-/* =========================================
-   7. FANDOM
-   ========================================= */
+/* Fandom & Modal */
 .seccion-fandom { padding: 30px; background: #080808; border-top: 1px solid #333; padding-bottom: 100px; }
 .formulario-fandom { background: #111; padding: 20px; border: 1px solid #333; margin-bottom: 30px; }
 .input-fandom { width: 100%; padding: 12px; border: 1px solid #333; background: #000; color: white; margin-bottom: 10px; }
@@ -350,9 +370,6 @@ h1, h2, h3, h4, h5,
 .spoiler-overlay { position: absolute; inset: 0; background: #000; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 50; cursor: pointer; transition: opacity 0.3s ease; }
 .spoiler-overlay.revelado { opacity: 0; pointer-events: none; }
 
-/* =========================================
-   8. MODAL
-   ========================================= */
 .modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.95); display: none; justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(5px); }
 .modal.abierto { display: flex; }
 .modal-contenido-imagen { display: none; text-align: center; }

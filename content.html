@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cargando Perfil... | CSM DB</title>
+    <title>Historia Completa | CSM Wiki</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,70 +11,97 @@
     <div class="contenedor">
         
         <aside class="menu">
-            <button id="btn-toggle" class="btn-toggle">◀</button>
-
+            <button id="btn-toggle" class="btn-toggle"><span class="flecha">◀</span></button>
             <div class="menu-contenido">
-                <div class="logo" onclick="window.location='index.html'">CSM DATABASE</div>
-                
+                <div class="logo" onclick="window.location='index.html'">CSM WIKI</div>
                 <div class="zona-buscar">
                     <input type="text" id="input-busqueda" class="buscador" placeholder="🔎 Buscar agente...">
                 </div>
-                
                 <div id="lista-menu" class="lista"></div>
             </div>
         </aside>
 
         <main class="principal">
             
-            <header class="portada" id="header-portada">
-                <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 8px; backdrop-filter: blur(2px);">
-                    <a href="index.html" style="background: black; padding: 5px 10px; font-weight: bold; font-size: 0.8rem; color: var(--color-tema-actual); border: 1px solid var(--color-tema-actual); display: inline-block; margin-bottom: 10px;">↞ VOLVER AL INICIO</a>
-                    <h1 id="p-nombre" style="margin: 0; font-size: 3rem; line-height: 1;">Cargando...</h1>
+            <header class="portada portada-wiki">
+                <div class="texto-portada-wiki">
+                    <h1>HISTORIA COMPLETA</h1>
+                    <p>Cronología Oficial del Manga</p>
                 </div>
             </header>
 
-            <div class="perfil-grid">
+            <div class="nav-arcos-container">
+                <p class="nav-arcos-titulo">Navegación Rápida (Click para saltar)</p>
+                <div id="carrusel-arcos-track" class="carrusel-arcos-track">
+                    </div>
+            </div>
+
+            <div class="contenido-wiki">
                 
-                <div class="columna-info">
-                    <div id="contenedor-dinamico"></div>
-                </div>
+                <div class="titulo-parte">PARTE 1: ARCO DE SEGURIDAD PÚBLICA</div>
 
-                <div class="sidebar-pj">
-                    <div class="foto-principal-marco" id="marco-foto">
-                        <img id="p-foto" src="" alt="Foto Perfil" class="foto-principal">
-                        <div class="etiqueta-hover">🔍 CLIC PARA GALERÍA</div>
-                    </div>
+                <h2 id="arco-1">1. Arco de Introducción</h2>
+                <p>La historia comienza con <span class="highlight">Denji</span>, un adolescente que vive en la miseria absoluta, obligado a vender sus órganos (un riñón, un testículo y un ojo) para pagar la deuda heredada de su padre con la Yakuza. Su único compañero es <span class="highlight">Pochita</span>, el Demonio Motosierra, a quien salvó dándole de su sangre. Ambos sobreviven cazando demonios por tarifas miserables.</p>
+                <p>Una noche, la Yakuza, controlada por el <strong>Demonio Zombie</strong>, traiciona a Denji, descuartizándolo y tirándolo a un contenedor de basura. Pochita decide sacrificarse y convertirse en el corazón de Denji, estableciendo un contrato: <em>"Te daré mi corazón, a cambio, muéstrame tus sueños"</em>. Denji revive como el híbrido Chainsaw Man y masacra a los zombies. <span class="highlight">Makima</span>, una alta oficial de Seguridad Pública, llega al lugar y lo recluta tratándolo como a una "mascota", dándole dos opciones: morir como demonio o vivir (y trabajar) como humano bajo su cuidado.</p>
 
-                    <div class="contenedor-carrusel-vertical">
-                        <h4 style="margin-bottom:15px; color:white; border-bottom:1px solid #333; padding-bottom:5px;">OTROS AGENTES</h4>
-                        <div id="vertical-viewport" class="carrusel-vertical-viewport">
-                            <div id="vertical-track" class="carrusel-vertical-track"></div>
-                        </div>
-                        <div style="text-align:center; font-size:0.7rem; color:#777; margin-top:10px; border-top:1px solid #222; padding-top:5px;">
-                            ↕ Usa la rueda del ratón
-                        </div>
-                    </div>
-                </div>
+                <h2 id="arco-2">2. Arco del Demonio Murciélago y la Eternidad</h2>
+                <p>Denji es asignado a la División Especial 4 y conoce a <span class="highlight">Aki Hayakawa</span> (quien lo golpea inicialmente) y a la poseída <span class="highlight">Power</span>. Power engaña a Denji para que sea devorado por el Demonio Murciélago a cambio de salvar a su gata, Nyako. Denji derrota al Murciélago y luego al Demonio Sanguijuela, salvando a Power y estableciendo una extraña amistad basada en el interés mutuo.</p>
+                <p>Más tarde, la División 4 queda atrapada en el piso 8 de un hotel por el <strong>Demonio de la Eternidad</strong>, quien detiene el tiempo y exige el corazón de Denji. Tras ver a sus compañeros (especialmente Kobeni y Arai) sucumbir al pánico, Denji se lanza a la boca del demonio. Durante tres días consecutivos, Denji corta al demonio, bebe su sangre para regenerarse y lo vuelve a cortar, torturando al demonio hasta que este, incapaz de soportar el dolor, ofrece su propio núcleo para morir. Este acto le gana el respeto de Himeno y consolida al equipo.</p>
+
+                <h2 id="arco-3">3. Arco de Katana Man</h2>
+                <p>El nieto del jefe Yakuza asesinado por Denji, ahora convertido en el híbrido <strong>Katana Man</strong>, orquesta una emboscada masiva en Tokio junto a Akane Sawatari (contratista del Demonio Pistola). Disparan a los miembros de la División Especial en plena luz del día. Denji recibe un disparo en la cabeza, y Aki es superado.</p>
+                <p><span class="highlight">Himeno</span> sacrifica su vida entera al Demonio Fantasma para salvar a Aki, pero Akane usa al Demonio Serpiente para devorar al Fantasma. Makima, desde Kioto, realiza un ritual macabro usando prisioneros condenados para aplastar a distancia a los tiradores en Tokio, salvando a los supervivientes. Tras el ataque, la División 4 es reforzada. Denji y Power son entrenados por el maestro <span class="highlight">Kishibe</span>, quien los mata repetidamente para agudizar sus instintos. En el contraataque final, Aki derrota al Demonio Fantasma (que le entrega un cigarrillo con el mensaje "Easy Revenge"), y Denji vence a Katana Man en un duelo de resistencia, pateándole la entrepierna en un "torneo" junto a Aki como venganza por Himeno.</p>
+
+                <h2 id="arco-4">4. Arco de la Chica Bomba (Reze)</h2>
+                <p>Denji conoce a <span class="highlight">Reze</span>, una chica que trabaja en una cafetería y parece genuinamente interesada en él, enseñándole a nadar y a disfrutar la vida escolar nocturna. Sin embargo, Reze se revela como una agente soviética y la Híbrida del <strong>Demonio Bomba</strong>, enviada para robar el corazón de Chainsaw Man.</p>
+                <p>Reze ataca la sede de entrenamiento, demostrando un poder explosivo devastador. Denji, ayudado por Beam (Demonio Tiburón), lucha contra ella en medio de un tifón. Tras derrotarla, Denji decide no entregarla a Seguridad Pública y le propone huir juntos. Reze, conmovida, decide volver a la cafetería para escapar con él, pero es interceptada en un callejón por Makima y el Demonio Ángel. Makima la ejecuta fríamente, revelando por primera vez su naturaleza siniestra al lector.</p>
+
+                <h2 id="arco-5">5. Arco de los Asesinos Internacionales</h2>
+                <p>La noticia de Chainsaw Man se hace global. EE.UU., China, Alemania y la URSS envían asesinos a Tokio. Entre ellos destacan los Hermanos Aldo (inmortales), <span class="highlight">Quanxi</span> (la primera Devil Hunter) y el misterioso <strong>Santa Claus</strong>. La ciudad se convierte en un campo de batalla.</p>
+                <p>Santa Claus, que resulta ser una mente colmena controlada por una mujer llamada "Maestra", sacrifica a sus "hijos" para invocar al Demonio del Infierno. Todo el edificio donde están los protagonistas es transportado al Infierno. Allí aparece el <strong>Demonio de la Oscuridad</strong> (un Miedo Primordial). En una escena de terror puro, la Oscuridad desmembra a todos los cazadores en segundos, matando a Beam, Galgali y destrozando a Power y Aki. Makima fuerza su entrada al Infierno para rescatarlos, dañando levemente a la Oscuridad antes de ser devueltos a la Tierra.</p>
+                <p>Ya en la Tierra, Denji se enfrenta a una Santa Claus potenciada por la Oscuridad. Para ganar, Denji se prende fuego a sí mismo (la luz debilita a Santa Claus) y la descuartiza en una batalla frenética, mientras Cosmo (una de las novias de Quanxi) destruye la mente de Santa Claus con el conocimiento infinito del universo ("Halloween"). Tras la batalla, Makima decapita a Quanxi, eliminando a todos los testigos.</p>
+
+                <h2 id="arco-6">6. Arco del Demonio Pistola</h2>
+                <p>El presidente de EE.UU., consciente de que Makima es el Demonio del Control, hace un contrato con el <strong>Demonio Pistola</strong>: le ofrece un año de vida de cada ciudadano estadounidense a cambio de matar a Makima. El Demonio Pistola se manifiesta y arrasa ciudades japonesas en segundos, matando a miles.</p>
+                <p>Makima enfrenta al Demonio Pistola y lo vence (usando los contratos de los fallecidos bajo su control), pero el demonio, en un último acto desesperado (o quizás manipulado por Makima), posee el cadáver de <span class="highlight">Aki Hayakawa</span>, quien acababa de morir en el ataque. Aki se convierte en el <strong>Hombre Demonio Pistola</strong>.</p>
+                <p>Denji escucha que llaman a su puerta. Es Aki-Pistola. Se desata una pelea trágica donde Aki alucina que está jugando una guerra de bolas de nieve con Denji, mientras que en la realidad está destruyendo el vecindario y matando civiles. Denji, llorando, se ve obligado a matar a su "hermano mayor", atravesándolo con su motosierra mientras Aki ve a su hermano pequeño en la alucinación final.</p>
+
+                <h2 id="arco-7">7. Arco del Demonio del Control (Final Parte 1)</h2>
+                <p>Denji, roto mentalmente, acude a Makima buscando consuelo y desea ser su "perro". Makima revela su verdadera identidad: ella es el <strong>Demonio del Control</strong> y fanática de Chainsaw Man. Para romper el contrato de Denji con Pochita (que requiere que Denji tenga una vida normal), Makima invita a <span class="highlight">Power</span> al apartamento y la mata instantáneamente (la explota) frente a Denji cuando este abre la puerta.</p>
+                <p>Con Denji catatónico, Makima invoca al "Héroe del Infierno". Pochita toma el control total del cuerpo de Denji (Chainsaw Man Negro) y lucha contra Makima y los 7 Híbridos (incluidos Reze, Quanxi y Katana Man controlados). Pochita es casi invencible, pero la adoración de la humanidad debilita su poder (el miedo lo hace fuerte, la admiración lo debilita).</p>
+                <p>En el momento crítico, Power revive dentro del cuerpo de Denji (como Demonio de la Sangre) gracias a la sangre que él bebió. Power se sacrifica para salvar a Denji y le hace un contrato final: <em>"Encuentra al Demonio de la Sangre en el infierno y hazte amigo de él otra vez. Devuélveme a la vida"</em>.</p>
+                <p>Denji, restaurado, se enfrenta a Makima en un cementerio. Sabiendo que no puede vencerla por fuerza (ella se regenera infinitamente), Denji usa una motosierra hecha con la sangre de Power para frenar su regeneración y la ataca por sorpresa. Para "derrotarla" permanentemente y eludir su contrato de inmortalidad, Denji decide <strong>convertirse en uno con ella</strong>: cocina su cuerpo en varios platos y se la come con amor, no con odio. El plan funciona. Días después, Kishibe trae a una niña pequeña de China: es <span class="highlight">Nayuta</span>, la reencarnación del Demonio del Control. Denji la acoge para darle la familia que Makima nunca tuvo.</p>
+
+                <div class="titulo-parte">PARTE 2: ARCO DE LA ACADEMIA</div>
+
+                <h2 id="arco-8">8. Arco del Demonio de la Guerra</h2>
+                <p>La historia cambia de perspectiva a <span class="highlight">Asa Mitaka</span>, una estudiante solitaria que odia a Chainsaw Man. Tras tropezar y matar accidentalmente al Demonio Pollo (Bucky), es condenada al ostracismo. La Delegada de su clase, que tiene un contrato con el Demonio de la Justicia, la asesina por celos. En sus últimos momentos, el <strong>Demonio de la Guerra (Yoru)</strong> aparece y le ofrece un contrato: revivirla a cambio de compartir su cuerpo.</p>
+                <p>Yoru toma el control, convierte el uniforme de su profesora en una espada (Espada de Uniforme Tanaka) y mata a la Delegada. Yoru revela su objetivo: hacer que Chainsaw Man vomite al <strong>Demonio de las Armas Nucleares</strong> (comido por Pochita en el pasado) para restaurar el miedo a la guerra. Asa y Yoru deben cooperar.</p>
+
+                <h2 id="arco-9">9. El Acuario y el Demonio de la Caída</h2>
+                <p>Asa intenta convertir a Denji en un arma seduciéndolo en una cita en el acuario, pero quedan atrapados por el Demonio de la Eternidad (otra vez). Asa logra crear una "Lanza de Acuario" comprando el acuario entero con dinero robado, matando al demonio y escapando. Denji no se da cuenta de nada.</p>
+                <p>Poco después, aparece el <strong>Demonio de la Caída</strong> (un Miedo Primordial) con la misión de cocinar humanos para los habitantes del Infierno. Su ataque provoca traumas masivos haciendo que la gente "caiga" hacia el cielo recordando sus peores momentos. Chainsaw Man interviene pero es superado y luego devorado. Asa/Yoru logran salvarlo. Se revela que detrás del ataque está <span class="highlight">Fami (Kiga)</span>, el Demonio de la Hambruna y hermana mayor de Yoru.</p>
+
+                <h2 id="arco-10">10. Arco de la Iglesia de Chainsaw Man</h2>
+                <p>Se funda la "Iglesia de Chainsaw Man", un culto masivo liderado en las sombras por Fami y <span class="highlight">Barem Bridge</span> (Híbrido Lanzallamas). Yoshida, de Seguridad Pública, secuestra a Denji y le prohíbe transformarse bajo amenaza de matar a Nayuta si lo hace. Denji intenta vivir una vida normal, pero la Iglesia empieza a causar caos global usando "Chainsaw Mans falsos" (humanos convertidos en demonios por el Demonio Fuego).</p>
+                <p>Barem confronta a Denji, quema su apartamento y decapita a sus mascotas frente a él para romper su promesa de no transformarse. Denji pierde la razón, se transforma y corta a Barem y a los híbridos, pero la gente, en lugar de temerle, lo adora más que nunca, debilitándolo.</p>
+
+                <h2 id="arco-11">11. Arco de la Prisión y el Regreso de Pochita</h2>
+                <p>Denji es capturado por Seguridad Pública, que planea descuartizarlo y mantenerlo en cajas para siempre. Asa y Yoru (potenciadas por la guerra global que Fami ha incitado) asaltan la instalación para "salvar" a Chainsaw Man (Yoru quiere pelear con él, Asa quiere salvar a Denji). Katana Man también ayuda en la fuga.</p>
+                <p>El grupo escapa y se refugia en un restaurante de Sushi. Allí, Barem aparece con una bandeja. Revela la cabeza decapitada de <span class="highlight">Nayuta</span>. Este trauma rompe finalmente el contrato de Denji ("tener una vida normal"). Denji abandona su humanidad y el <strong>Demonio Motosierra Negro (Pochita Real)</strong> toma el control total.</p>
+                <p>Pochita inicia una masacre indiscriminada. La División Especial 5 (formada por demonios Oreja, Boca, Ojos, etc.) intenta detenerlo. Pochita devora al <strong>Demonio Oreja</strong>, borrando el concepto de "oídos" de la realidad en un instante (nadie puede oír). Hirofumi Yoshida y Seguridad Pública entran en pánico. Pochita vomita al Demonio Oreja para restaurar el sentido, pero sigue su matanza.</p>
+
+                <h2 id="arco-12">12. Actualidad: El Demonio del Envejecimiento y la Batalla Final</h2>
+                <p>Pochita devora al <strong>Demonio Boca</strong>, borrando las bocas de la existencia (nadie puede hablar ni comer). La realidad empieza a colapsar. En un acto desesperado, Seguridad Pública utiliza su último recurso: un contrato con el <strong>Demonio del Envejecimiento</strong> (Aging Devil). A cambio de que 10,000 niños japoneses mueran, el Demonio del Envejecimiento obliga a Pochita a vomitar lo que ha comido.</p>
+                <p>Las bocas regresan. Yoru, enfurecida y más fuerte que nunca debido al miedo global a la guerra, decide sacrificar sus "hijos" más preciados. Invoca al <strong>Demonio Pistola</strong> y al <strong>Demonio Tanque</strong>, transformándolos en guanteletes para sus brazos. La batalla entre la Guerra (Yoru al máximo poder) y el Motosierra (Pochita desatado) comienza, destruyendo la ciudad y alterando la realidad misma con cada golpe. Yoru reclama que Chainsaw Man ahora le "pertenece".</p>
+
+                <div class="separador-final">***</div>
+                <p style="text-align: center; color: #666; font-size: 0.9rem;">Wiki actualizada hasta el último capítulo del manga.</p>
+
             </div>
         </main>
     </div>
-
-    <div id="mi-modal" class="modal">
-        <span id="btn-cerrar" class="cerrar">&times;</span>
-        
-        <button id="btn-anterior" class="btn-nav-modal prev">&#10094;</button>
-        <button id="btn-siguiente" class="btn-nav-modal next">&#10095;</button>
-
-        <div class="modal-contenido-imagen">
-            <img id="img-modal" src="">
-        </div>
-
-        <div class="modal-contenido-texto">
-            <h2 id="modal-titulo-texto" class="modal-titulo-texto"></h2>
-            <div id="modal-cuerpo-texto" style="font-size: 1.1rem; line-height: 1.8; color: #ccc;"></div>
-        </div>
-    </div>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
